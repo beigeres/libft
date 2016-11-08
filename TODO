@@ -1,0 +1,4 @@
+Putnbr faire le - a chaque charactere pour gerer automatiquement lint min
+atoi travailler sur un long int en interne puis cast a la fin pour etre coherent avec la libc
+strsplit utiliser strchr
+strsplit verifier la valeur de retour de get_word pour un NULL

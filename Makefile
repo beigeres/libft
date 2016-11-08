@@ -22,7 +22,7 @@ SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 OBJDIR	= objs
 OBJ		= $(SRC:%.c=$(OBJDIR)/%.o)
 DEPS	= libft.h
-GIT		= Makefile auteur
+GIT		= Makefile auteur TODO
 
 .PHONY: fclean all re git no printf check clean 
 
