@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/08 10:12:43 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/10 11:05:49 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define FT_INT_MAX_STR "2147483647"
 # define FT_INT_MIN_DIG 11
 
-# define MAX(a,b) (a > b) ? a : b
+# define MAX(a,b) ((a > b) ? a : b)
 
 typedef enum	e_bool
 {
