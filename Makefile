@@ -1,7 +1,7 @@
 NAME	= libft.a
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-LDFLAGS	=
+
+OBJDIR	= objs
+
 SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_memchr.c ft_memcmp.c \
 		  ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
@@ -18,11 +18,16 @@ SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_putnbr_fd_base.c ft_digits_base.c ft_itoa_base.c \
 		  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		  ft_lstiter.c ft_lstmap.c ft_lstfold.c \
-		  ft_memdup.c
-OBJDIR	= objs
+		  ft_memdup.c \
+		  ft_plst.c ft_plst_push.c ft_plst_utils.c
 OBJ		= $(SRC:%.c=$(OBJDIR)/%.o)
-DEPS	= libft.h
-GIT		= Makefile auteur TODO
+
+CC		= gcc
+CFLAGS	= -Wall -Wextra 
+LDFLAGS	= 
+
+INC		= libft.h ft_plst.h ft_bool.h
+GIT		= Makefile TODO
 
 .PHONY: fclean all re git no printf check clean 
 
@@ -31,20 +36,20 @@ all: $(NAME)
 $(NAME): $(OBJ) 
 	ar -rcs $@ $^
 
-$(OBJDIR)/%.o: %.c $(DEPS)
+$(OBJDIR)/%.o: %.c $(INC)
 	mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
 git:
-	git add $(SRC) $(DEPS) $(GIT)
+	git add $(SRC) $(INC) $(GIT)
 
 no:
 	@echo "Passage de la norminette :"
-	@norminette $(SRC) $(DEPS)
+	@norminette $(SRC) $(INC)
 
 printf:
 	@echo "Detection des printf :\033[1;31m"
-	@cat $(SRC) $(DEPS) | grep printf | cat
+	@cat $(SRC) $(INC) | grep printf | cat
 	@printf "\033[0m"
 
 check: no printf

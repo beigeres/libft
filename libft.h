@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/10 11:05:49 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/11 19:00:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# include "ft_bool.h"
+# include "ft_plst.h"
+
 # define FT_INT_MIN -2147483648
 # define FT_INT_MAX  2147483647
 # define FT_INT_MIN_STR "-2147483648"
@@ -24,12 +27,6 @@
 # define FT_INT_MIN_DIG 11
 
 # define MAX(a,b) ((a > b) ? a : b)
-
-typedef enum	e_bool
-{
-	FALSE,
-	TRUE
-}				t_bool;
 
 typedef struct	s_list
 {
