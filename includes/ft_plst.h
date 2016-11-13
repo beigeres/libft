@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:21:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/11 19:00:21 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/13 19:10:28 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FT_PLST_H
+#ifndef FT_PLST_H
 # define FT_PLST_H
 
 # include "ft_bool.h"

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/11 19:00:11 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/13 19:08:46 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,7 @@ char			*ft_itoa_base(int n, int b);
 void			*ft_memdup(const void *ptr, size_t size);
 
 void			*ft_lstfold(t_list *lst, void *(*f)(void *, void *));
+
+void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
 
 #endif

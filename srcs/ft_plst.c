@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 17:34:42 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/11 17:18:10 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/13 19:10:01 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_plst.h"
 
-t_plst				*ft_plst_new(void)
+t_plst	*ft_plst_new(void)
 {
 	t_plst	*plst;
 
@@ -24,7 +24,7 @@ t_plst				*ft_plst_new(void)
 	return (plst);
 }
 
-void				ft_plst_delete(t_plst *plst)
+void	ft_plst_delete(t_plst *plst)
 {
 	t_plst_e	*elem;
 
@@ -39,7 +39,7 @@ void				ft_plst_delete(t_plst *plst)
 	free(plst);
 }
 
-void			ft_plst_pop_front(t_plst *plst)
+void	ft_plst_pop_front(t_plst *plst)
 {
 	t_plst_e	*todell;
 
