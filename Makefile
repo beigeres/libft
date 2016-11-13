@@ -1,8 +1,10 @@
 NAME	= libft.a
 
+SRCDIR	= srcs
 OBJDIR	= objs
+INCDIR	= includes
 
-SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_memchr.c ft_memcmp.c \
 		  ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 		  ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c \
@@ -20,14 +22,18 @@ SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_lstiter.c ft_lstmap.c ft_lstfold.c \
 		  ft_memdup.c \
 		  ft_plst.c ft_plst_push.c ft_plst_utils.c
-OBJ		= $(SRC:%.c=$(OBJDIR)/%.o)
+
+SRC		= $(SRCNAM:%=$(SRCDIR)/%)
+OBJ		= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra 
+CFLAGS	= -Wall -Wextra  -I$(INCDIR)
 LDFLAGS	= 
 
-INC		= libft.h ft_plst.h ft_bool.h
-GIT		= Makefile TODO
+INCNAM	= libft.h ft_plst.h ft_bool.h
+INC		= $(INCNAM:%=$(INCDIR)/%)
+
+GIT		= Makefile TODO 
 
 .PHONY: fclean all re git no printf check clean 
 
@@ -36,7 +42,7 @@ all: $(NAME)
 $(NAME): $(OBJ) 
 	ar -rcs $@ $^
 
-$(OBJDIR)/%.o: %.c $(INC)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INC)
 	mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
