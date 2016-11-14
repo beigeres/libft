@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:21:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/13 20:47:17 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/14 18:57:56 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void			ft_plst_apply(t_plst *plst, void (*f)(void *));
 int				ft_plst_count_if(t_plst *plst, t_bool (*f)(void *));
 void			*ft_plst_find(t_plst *plst, void *ref,
 		t_bool (*f)(void *, void *));
+void			ft_plst_remove(t_plst *plst, void *content);
 
 #endif

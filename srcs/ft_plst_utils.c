@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:11:21 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/13 20:47:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/14 18:57:23 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_plst.h"
 
-void	ft_plst_apply(t_plst *plst, void (*f)(void *))
+void		ft_plst_apply(t_plst *plst, void (*f)(void *))
 {
 	t_plst_e	*elem;
 
@@ -26,7 +26,7 @@ void	ft_plst_apply(t_plst *plst, void (*f)(void *))
 	}
 }
 
-int		ft_plst_count_if(t_plst *plst, t_bool (*f)(void *))
+int			ft_plst_count_if(t_plst *plst, t_bool (*f)(void *))
 {
 	t_plst_e	*elem;
 	int			n;
@@ -44,7 +44,7 @@ int		ft_plst_count_if(t_plst *plst, t_bool (*f)(void *))
 	return (n);
 }
 
-void	*ft_plst_find(t_plst *plst, void *ref, t_bool (*f)(void *, void *))
+void		*ft_plst_find(t_plst *plst, void *ref, t_bool (*f)(void *, void *))
 {
 	t_plst_e	*elem;
 
@@ -58,4 +58,41 @@ void	*ft_plst_find(t_plst *plst, void *ref, t_bool (*f)(void *, void *))
 		elem = elem->next;
 	}
 	return (NULL);
+}
+
+static void	ft_plst_remove_next(t_plst_e **ptr)
+{
+	t_plst_e	*tmp;
+
+	tmp = (*ptr)->next;
+	free(*ptr);
+	*ptr = tmp;
+}
+
+void		ft_plst_remove(t_plst *plst, void *content)
+{
+	t_plst_e	*elem;
+	t_plst_e	*tmp;
+
+	if (plst == NULL)
+		return ;
+	if (plst->first == NULL)
+		return ;
+	if (plst->first->content == content)
+	{
+		ft_plst_remove_next(&(plst->first));
+		plst->size--;
+		return ;
+	}
+	elem = plst->first;
+	while (elem->next != NULL)
+	{
+		if (elem->next->content == content)
+		{
+			ft_plst_remove_next(&(elem->next));
+			plst->size--;
+			return ;
+		}
+		elem = elem->next;
+	}
 }
