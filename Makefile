@@ -27,7 +27,7 @@ SRC		= $(SRCNAM:%=$(SRCDIR)/%)
 OBJ		= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra  -I$(INCDIR)
+CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS	= 
 
 INCNAM	= libft.h ft_plst.h ft_bool.h

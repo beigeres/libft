@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:11:21 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/14 18:57:23 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:00:22 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ static void	ft_plst_remove_next(t_plst_e **ptr)
 void		ft_plst_remove(t_plst *plst, void *content)
 {
 	t_plst_e	*elem;
-	t_plst_e	*tmp;
 
 	if (plst == NULL)
 		return ;
