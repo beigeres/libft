@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 14:43:00 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/15 16:06:18 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/15 16:18:32 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void			*ft_slist_find(t_slist *slist, void *ref, t_f_comp f);
 void			ft_slist_remove(t_slist **slist, void *content);
 
 void			ft_slist_apply(t_slist *slist, void (*f)(void *));
-int				ft_slist_count_if(t_slist *slist, t_f_action f);
+int				ft_slist_count_if(t_slist *slist, t_bool (*f)(void *));
 
 #endif

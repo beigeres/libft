@@ -32,7 +32,7 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS	= 
 
-INCNAM	= libft.h ft_plst_e.h ft_plst.h ft_bool.h
+INCNAM	= libft.h ft_bool.h ft_slist.h #ft_plst_e.h ft_plst.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile TODO 
