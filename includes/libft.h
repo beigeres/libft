@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/13 19:08:46 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/15 16:02:12 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 
 # include "ft_bool.h"
-# include "ft_plst.h"
+# include "ft_slist.h"
 
 # define FT_INT_MIN -2147483648
 # define FT_INT_MAX  2147483647

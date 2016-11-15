@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:21:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/14 18:57:56 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/14 19:44:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 
 # include "ft_bool.h"
 
+# include "ft_plst_e.h"
+
 # include <stdlib.h>
 
-typedef struct	s_plst_e
-{
-	void			*content;
-	struct s_plst_e	*next;
-}				t_plst_e;
 
 typedef struct	s_plst
 {
