@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 14:46:36 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/15 15:59:21 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/16 17:25:53 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_slist.h"
 
-void	ft_slist_push_front(t_slist **slist, void *content)
+void		ft_slist_push_front(t_slist **slist, void *content)
 {
 	t_slist	*elem;
 
@@ -25,21 +25,18 @@ void	ft_slist_push_front(t_slist **slist, void *content)
 	*slist = elem;
 }
 
-void	*ft_slist_find(t_slist *slist, void *ref, t_f_comp f)
+static void	ft_slist_remove_remove(t_slist **slist)
 {
-	while (slist != NULL)
-	{
-		if ((*f)(slist->content, ref))
-			return (slist->content);
-		slist = slist->next;
-	}
-	return (NULL);
+	t_slist	*tmp;
+
+	tmp = (*slist)->next;
+	free(*slist);
+	*slist = tmp;
 }
 
-void	ft_slist_remove(t_slist **slist, void *content)
+void		ft_slist_remove(t_slist **slist, void *content)
 {
 	t_slist	*elem;
-	t_slist	*tmp;
 
 	if (slist == NULL)
 		return ;
@@ -47,9 +44,7 @@ void	ft_slist_remove(t_slist **slist, void *content)
 		return ;
 	if ((*slist)->content == content)
 	{
-		tmp = (*slist)->next;
-		free(*slist);
-		*slist = tmp;
+		ft_slist_remove_remove(slist);
 		return ;
 	}
 	elem = *slist;
@@ -57,34 +52,9 @@ void	ft_slist_remove(t_slist **slist, void *content)
 	{
 		if (elem->next->content == content)
 		{
-			tmp = elem->next->next;
-			free(elem->next);
-			elem->next = tmp;
+			ft_slist_remove_remove(&(elem->next));
 			return ;
 		}
 		elem = elem->next;
 	}
-}
-
-void		ft_slist_apply(t_slist *slist, void (*f)(void *))
-{
-	while (slist != NULL)
-	{
-		(*f)(slist->content);
-		slist = slist->next;
-	}
-}
-
-int			ft_slist_count_if(t_slist *slist, t_bool (*f)(void *))
-{
-	int			n;
-
-	n = 0;
-	while (slist != NULL)
-	{
-		if ((*f)(slist->content))
-			n++;
-		slist = slist->next;
-	}
-	return (n);
 }
