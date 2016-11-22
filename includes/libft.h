@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/22 17:37:56 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/22 17:44:35 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,5 @@ void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
 int				ft_min_int(int a, int b);
 
 int				ft_max_int(int a, int b);
-
-int	ft_printf(const char *format, ...);
 
 #endif
