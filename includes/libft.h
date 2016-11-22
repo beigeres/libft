@@ -6,16 +6,36 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/15 16:02:12 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/22 17:37:56 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*
+** Needed for NULL declaration
+*/
+
 # include <string.h>
+
+/*
+** Needed for write declaration ft_putchar...
+*/
+
 # include <unistd.h>
+
+/*
+** Needed for malloc declaration
+*/
+
 # include <stdlib.h>
+
+/*
+** Needed for variadic function ft_printf
+*/
+
+# include <stdarg.h>
 
 # include "ft_bool.h"
 # include "ft_slist.h"
@@ -25,8 +45,6 @@
 # define FT_INT_MIN_STR "-2147483648"
 # define FT_INT_MAX_STR "2147483647"
 # define FT_INT_MIN_DIG 11
-
-# define MAX(a,b) ((a > b) ? a : b)
 
 typedef struct	s_list
 {
@@ -130,5 +148,11 @@ void			*ft_memdup(const void *ptr, size_t size);
 void			*ft_lstfold(t_list *lst, void *(*f)(void *, void *));
 
 void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
+
+int				ft_min_int(int a, int b);
+
+int				ft_max_int(int a, int b);
+
+int	ft_printf(const char *format, ...);
 
 #endif
