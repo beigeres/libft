@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 19:46:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/05 20:02:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/22 19:33:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,19 @@ char	*ft_itoa_base(int n, int b)
 	char	*str;
 	int		i;
 
-	if (n == FT_INT_MIN)
-		return (ft_strdup(FT_INT_MIN_STR));
 	i = ft_digits_base(n, b);
 	if ((str = malloc(sizeof(char) * (i + 1))) == NULL)
 		return (NULL);
 	str[i] = '\0';
 	i--;
 	if (n < 0)
-	{
 		str[0] = '-';
-		n = -n;
-	}
-	while (n >= b)
+	while ((n >= 0 && n >= b) || (n < 0 && n <= -b))
 	{
-		str[i] = n % b + '0';
+		str[i] = ((n < 0) ? -1 : 1) * (n % b) + '0';
 		i--;
 		n /= b;
 	}
-	str[i] = n % b + '0';
+	str[i] = ((n < 0) ? -1 : 1) * (n % b) + '0';
 	return (str);
 }
