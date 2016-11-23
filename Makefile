@@ -17,12 +17,13 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_strsplit.c ft_itoa.c ft_atoi.c \
 		  ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		  ft_putnbr_fd_base.c ft_digits_base.c ft_itoa_base.c \
+		  ft_putnbr_fd_base.c ft_itoa_base.c \
 		  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		  ft_lstiter.c ft_lstmap.c ft_lstfold.c \
 		  ft_memdup.c ft_nrealloc.c \
 		  ft_slist.c ft_slist_utils.c \
-		  ft_min_int.c ft_max_int.c
+		  ft_min_int.c ft_max_int.c \
+		  ft_digits_base.c ft_lld_digits_base.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)

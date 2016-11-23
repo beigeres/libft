@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/22 18:24:11 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/23 16:44:03 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,8 +145,7 @@ int				ft_isblank(int c);
 int				ft_isspace(int c);
 
 void			ft_putnbr_fd_base(int n, int fd, int b);
-int				ft_digits_base(int n, int b);
-char			*ft_itoa_base(int n, int b);
+char			*ft_itoa_base(int n, unsigned int b);
 
 void			*ft_memdup(const void *ptr, size_t size);
 
@@ -157,5 +156,8 @@ void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
 int				ft_min_int(int a, int b);
 
 int				ft_max_int(int a, int b);
+
+unsigned int	ft_digits_base(int n, unsigned int b);
+unsigned int	ft_lld_digits_base(long long int n, unsigned int b);
 
 #endif
