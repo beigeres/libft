@@ -23,7 +23,7 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_memdup.c ft_nrealloc.c \
 		  ft_slist.c ft_slist_utils.c \
 		  ft_min_int.c ft_max_int.c \
-		  ft_digits_base.c ft_lld_digits_base.c
+		  ft_digits_base.c ft_lld_digits_base.c ft_llu_digits_base.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
