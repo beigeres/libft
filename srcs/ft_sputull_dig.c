@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llu_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_sputull_dig.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 16:12:18 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/23 16:50:30 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/23 17:50:29 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/23 17:56:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_llu_digits_base(unsigned long long int n, unsigned int base)
+void	ft_sputull_dig(unsigned long long int n, unsigned int base,
+		char *str, unsigned int digits)
 {
-	int	a;
-
-	a = 1;
-	while (n >= (unsigned long long int)base)
+	digits--;
+	while (n >= base)
 	{
-		a++;
+		str[digits] = (n % base) + '0';
+		digits--;
 		n /= base;
 	}
-	return (a);
+	str[digits] = (n % base) + '0';
 }
