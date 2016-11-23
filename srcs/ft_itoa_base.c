@@ -6,13 +6,35 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 19:46:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/22 19:33:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/23 15:51:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa_base(int n, int b)
+static void	ft_itoa_base_f_neg(int n, int b, char *str, int i)
+{
+	while (n <= -b)
+	{
+		str[i] = -(n % b) + '0';
+		i--;
+		n /= b;
+	}
+	str[i] = -(n % b) + '0';
+}
+
+static void	ft_itoa_base_f(int n, int b, char *str, int i)
+{
+	while (n >= b)
+	{
+		str[i] = (n % b) + '0';
+		i--;
+		n /= b;
+	}
+	str[i] = (n % b) + '0';
+}
+
+char		*ft_itoa_base(int n, int b)
 {
 	char	*str;
 	int		i;
@@ -23,13 +45,11 @@ char	*ft_itoa_base(int n, int b)
 	str[i] = '\0';
 	i--;
 	if (n < 0)
-		str[0] = '-';
-	while ((n >= 0 && n >= b) || (n < 0 && n <= -b))
 	{
-		str[i] = ((n < 0) ? -1 : 1) * (n % b) + '0';
-		i--;
-		n /= b;
+		str[0] = '-';
+		ft_itoa_base_f_neg(n, b, str, i);
 	}
-	str[i] = ((n < 0) ? -1 : 1) * (n % b) + '0';
+	else
+		ft_itoa_base_f(n, b, str, i);
 	return (str);
 }
