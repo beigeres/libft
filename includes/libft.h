@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/23 17:58:44 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:16:34 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@
 # define FT_INT_MIN_STR "-2147483648"
 # define FT_INT_MAX_STR "2147483647"
 # define FT_INT_MIN_DIG 11
+
+typedef struct	s_base
+{
+	unsigned int	size;
+	char			*str;
+}				t_base;
 
 typedef struct	s_list
 {
@@ -144,7 +150,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_isblank(int c);
 int				ft_isspace(int c);
 
-void			ft_putnbr_fd_base(int n, int fd, int b);
+void			ft_putnbr_fd_base(int n, int fd, t_base *base);
 char			*ft_itoa_base(int n, unsigned int b);
 
 void			*ft_memdup(const void *ptr, size_t size);
@@ -158,10 +164,12 @@ int				ft_min_int(int a, int b);
 int				ft_max_int(int a, int b);
 
 unsigned int	ft_digits_base(int n, unsigned int b);
-unsigned int	ft_lld_digits_base(long long int n, unsigned int b);
+unsigned int	ft_ll_digits_base(long long int n, unsigned int b);
 unsigned int	ft_ull_digits_base(unsigned long long int n, unsigned int base);
 
-void			ft_sputull_dig(unsigned long long int n, unsigned int base,
+void			ft_sputll_dig(long long int n, t_base *base, char *str,
+		unsigned int digits);
+void			ft_sputull_dig(unsigned long long int n, t_base *base,
 		char *str, unsigned int digits);
 
 #endif

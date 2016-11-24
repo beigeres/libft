@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:14:18 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/08 12:58:49 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:24:29 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int	ft_atoi(const char *str)
 		n = n * 10 + *str - '0';
 		str++;
 	}
-	return (neg * n);
+	return ((int)neg * n);
 }

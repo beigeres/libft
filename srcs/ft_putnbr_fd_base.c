@@ -6,33 +6,26 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 20:17:30 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/23 15:40:49 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/24 12:22:08 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putnbr_fd_base_r_neg(int n, int fd, int b)
+static void	ft_putnbr_fd_base_r(unsigned int n, int fd, t_base *base)
 {
-	if (n <= -b)
-		ft_putnbr_fd_base_r_neg(n / b, fd, b);
-	ft_putchar_fd(-(n % b) + '0', fd);
+	if (n >= base->size)
+		ft_putnbr_fd_base_r(n / base->size, fd, base);
+	ft_putchar_fd(base->str[n % base->size], fd);
 }
 
-static void	ft_putnbr_fd_base_r(int n, int fd, int b)
-{
-	if (n >= b)
-		ft_putnbr_fd_base_r(n / b, fd, b);
-	ft_putchar_fd(n % b + '0', fd);
-}
-
-void		ft_putnbr_fd_base(int n, int fd, int b)
+void		ft_putnbr_fd_base(int n, int fd, t_base *base)
 {
 	if (n >= 0)
 	{
-		ft_putnbr_fd_base_r(n, fd, b);
+		ft_putnbr_fd_base_r((unsigned int)n, fd, base);
 		return ;
 	}
 	ft_putchar_fd('-', fd);
-	ft_putnbr_fd_base_r_neg(n, fd, b);
+	ft_putnbr_fd_base_r((unsigned int)-n, fd, base);
 }
