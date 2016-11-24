@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sputll_dig.c                                    :+:      :+:    :+:   */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 11:24:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 14:21:45 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/24 15:37:05 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/24 15:40:28 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_MATH_H
+# define FT_MATH_H
 
-void	ft_sputll_dig(long long int n, t_base *base, char *str,
-		unsigned int digits)
-{
-	if (n >= 0)
-	{
-		ft_sputull_dig((unsigned long long int)n, base, str, digits);
-		return ;
-	}
-	str[0] = '-';
-	ft_sputull_dig(-(unsigned long long int)n, base, str + 1, digits - 1);
-}
+int						ft_min(int a, int b);
+int						ft_max(int a, int b);
+unsigned int			ft_umax(unsigned int a, unsigned int b);
+
+unsigned long long int	ft_llabs(long long int a);
+
+#endif

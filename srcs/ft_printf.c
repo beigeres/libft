@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sputll_dig.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 11:24:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 14:21:45 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/24 14:59:21 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/24 15:42:53 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_sputll_dig(long long int n, t_base *base, char *str,
-		unsigned int digits)
+void	ft_pri_set_opts_default(t_pri_opts *opt)
 {
-	if (n >= 0)
-	{
-		ft_sputull_dig((unsigned long long int)n, base, str, digits);
-		return ;
-	}
-	str[0] = '-';
-	ft_sputull_dig(-(unsigned long long int)n, base, str + 1, digits - 1);
+	opt->left_justify = FALSE;
+	opt->sign = DEFAULT;
+	opt->sharp = FALSE;
+	opt->zero = FALSE;
+	opt->min_size = 0;
+	opt->precision = -1;
+	opt->sp = INT;
+}
+
+unsigned int	ft_pri_size_prec(long long int n, const t_pri_opts *opts)
+{
+	return (ft_umax(ft_ull_digits_base(ft_llabs(n), opts->base->size),
+				opts->precision));
 }
