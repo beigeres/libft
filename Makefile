@@ -35,7 +35,7 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS	= 
 
-INCNAM	= libft.h ft_bool.h ft_slist.h ft_math.h #ft_plst_e.h ft_plst.h
+INCNAM	= libft.h ft_bool.h ft_slist.h ft_math.h ft_base.h ft_printf.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile libft.xml TODO
