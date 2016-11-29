@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 16:18:15 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/28 19:14:05 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@
 # include <limits.h>
 
 # include "ft_bool.h"
+# include "ft_hlist.h"
 # include "ft_slist.h"
 # include "ft_printf.h"
 # include "ft_base.h"
 # include "ft_math.h"
+# include "ft_char_tools.h"
 
 # define FT_INT_MIN -2147483648
 # define FT_INT_MAX  2147483647
@@ -88,14 +90,6 @@ int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int				ft_atoi(const char *str);
-
-int				ft_isalpha(int c);
-int				ft_isdigit(int c);
-int				ft_isalnum(int c);
-int				ft_isascii (int c);
-int				ft_isprint(int c);
-int				ft_toupper(int c);
-int				ft_tolower(int c);
 
 /*
 ** Part 2

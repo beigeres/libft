@@ -21,11 +21,12 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
 		  ft_lstiter.c ft_lstmap.c ft_lstfold.c \
 		  ft_memdup.c ft_nrealloc.c \
-		  ft_slist.c ft_slist_utils.c \
+		  ft_slist.c ft_slist_utils.c ft_slist_it.c \
+		  ft_hlist.c ft_hlist_tools.c ft_hlist_it.c \
 		  ft_math.c \
-		  ft_digits_base.c ft_ll_digits_base.c ft_ull_digits_base.c \
+		  ft_digits_base.c ft_ll_digits_base.c ft_uintmax_digits_base.c \
 		  ft_sputull_dig.c ft_sputll_dig.c \
-		  ft_printf.c
+		  ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
@@ -35,10 +36,11 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS	= 
 
-INCNAM	= libft.h ft_bool.h ft_slist.h ft_math.h ft_base.h ft_printf.h
+INCNAM	= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
+		  ft_slist.h ft_hlist.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
-GIT		= Makefile libft.xml TODO
+GIT		= Makefile libft.xml libft.png TODO
 
 .PHONY: fclean all re git no printf check clean 
 
@@ -48,7 +50,7 @@ $(NAME): $(OBJ)
 	ar -rcs $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(INC)
-	mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJDIR)
 	$(CC) -c $(CFLAGS) -o $@ $< 
 
 git:

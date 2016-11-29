@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ll_digits_base.c                                :+:      :+:    :+:   */
+/*   ft_hlist_tools.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 17:59:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/25 15:54:56 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/27 14:59:45 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/27 15:40:52 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_hlist.h"
 
-unsigned int	ft_ll_digits_base(long long int n, unsigned int b)
+void			ft_hlist_apply(t_hlist *list, t_f_action f)
 {
-	return ((n < 0) ? 1 + ft_uintmax_digits_base((uintmax_t)-n, b) :
-			ft_uintmax_digits_base((uintmax_t)n, b));
+	ft_slist_apply(list->first, f);
+}
+
+int				ft_hlist_count_if(t_hlist *list, t_bool (*f)(void *))
+{
+	return (ft_slist_count_if(list->first, f));
 }

@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:19:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/04 16:28:10 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/28 19:15:27 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_char_tools.h"
 
 int	ft_isprint(int c)
 {

@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ll_digits_base.c                                :+:      :+:    :+:   */
+/*   ft_pri_opts.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 17:59:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/25 15:54:56 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/28 17:36:51 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/28 17:36:57 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_ll_digits_base(long long int n, unsigned int b)
+t_pri_opts		*ft_pri_opts_new(void)
 {
-	return ((n < 0) ? 1 + ft_uintmax_digits_base((uintmax_t)-n, b) :
-			ft_uintmax_digits_base((uintmax_t)n, b));
+	t_pri_opts	*opts;
+
+	if ((opts = malloc(sizeof(*opts))) == NULL)
+		return (NULL);
+	ft_pri_set_opts_default(opts);
+	return (opts);
 }
+
+void			ft_pri_set_opts_default(t_pri_opts *opt)
+{
+	opt->left_justify = FALSE;
+	opt->sign = PRI_DEFAULT;
+	opt->sharp = FALSE;
+	opt->zero = FALSE;
+	opt->width = 0;
+	opt->precision = -1;
+	opt->spec = PRI_INT;
+}
+

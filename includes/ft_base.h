@@ -6,12 +6,18 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 15:03:16 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 15:07:37 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/11/25 15:56:15 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BASE_H
 # define FT_BASE_H
+
+/*
+** Needed for uintmax_t
+*/
+
+# include <stdint.h>
 
 typedef struct	s_base
 {
@@ -24,7 +30,7 @@ char			*ft_itoa_base(int n, unsigned int b);
 
 unsigned int	ft_digits_base(int n, unsigned int b);
 unsigned int	ft_ll_digits_base(long long int n, unsigned int b);
-unsigned int	ft_ull_digits_base(unsigned long long int n, unsigned int base);
+unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base);
 
 void			ft_sputll_dig(long long int n, t_base *base, char *str,
 		unsigned int digits);
