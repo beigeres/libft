@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:27:49 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/08 15:40:29 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 17:45:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 static int			ft_word_len(const char *s, char c)
 {

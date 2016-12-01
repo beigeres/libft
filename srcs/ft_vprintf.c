@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:06:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/29 18:08:24 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 16:16:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_vprintf(const char *fmt, va_list ap)
 	return (ft_vdprintf(1, fmt, ap));
 }
 
-/*
+
 int		ft_vsprintf(char *str, const char *fmt, va_list ap)
 {
 	t_hlist			*opts;
@@ -28,9 +28,9 @@ int		ft_vsprintf(char *str, const char *fmt, va_list ap)
 	n = ft_pri_decrypt_format(fmt, ap, opts);
 	ft_pri_print(str, fmt, opts);
 	return (n);
-}*/
+}
 
-/*
+
 // Ne peut pas appeler vsprintf car vsprintf doit calculer la taille
 // et vasprintf aussi pour malloc
 int		ft_vasprintf(char **ret, const char *fmt, va_list ap)
@@ -46,7 +46,7 @@ int		ft_vasprintf(char **ret, const char *fmt, va_list ap)
 	ft_pri_print(*ret, fmt, opts);
 	return (n);
 }
-*/
+
 
 int		ft_vdprintf(int fd, const char *fmt, va_list ap)
 {

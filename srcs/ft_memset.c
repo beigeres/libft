@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:38:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/04 19:44:43 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:04:25 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

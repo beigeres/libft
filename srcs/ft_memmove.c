@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:39:03 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/08 12:46:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:05:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

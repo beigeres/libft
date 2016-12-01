@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 17:45:25 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 17:58:57 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:28:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int				ft_hlist_count_if(t_hlist *list, t_bool (*f)(void *));
 t_hlist_it		ft_hlist_it_first(t_hlist *list);
 t_hlist_it		ft_hlist_it_next(t_hlist_it it);
 void			*ft_hlist_it_get(t_hlist_it it);
-t_bool			ft_hlist_it_end(t_hlist_it it);
+t_bool			ft_hlist_it_end	(t_hlist_it it);
 
 #endif

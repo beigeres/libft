@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:13:55 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/05 15:38:43 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 17:35:15 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/03 15:41:59 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:05:44 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

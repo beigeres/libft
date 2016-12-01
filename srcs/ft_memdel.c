@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 14:01:11 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 21:08:08 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:04:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
 void	ft_memdel(void **ap)
 {

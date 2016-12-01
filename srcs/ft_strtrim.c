@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:53:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 21:08:26 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 17:45:32 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 static t_bool	ft_strtrim_isblank(char c)
 {

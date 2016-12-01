@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:37:58 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 17:45:00 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 14:32:58 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 unsigned int	ft_pri_uint_size_prec(uintmax_t n, const t_pri_opts *opts)
 {
+	//printf("ft_pri_uint_size_prec: %u\n", ft_uintmax_digits_base(n, opts->base->size));
+	//printf("prec = %u\n", opts->precision);
+	if (opts->prec_set && opts->precision == 0 && n == 0)
+		return (0);
 	return (ft_intmaxmax(ft_uintmax_digits_base(n, opts->base->size),
 				opts->precision));
 }
@@ -25,9 +29,11 @@ unsigned int	ft_pri_uint_size_prec(uintmax_t n, const t_pri_opts *opts)
 
 unsigned int	ft_pri_size_sign(const t_pri_opts *opts)
 {
+	//printf("ft_pri_size_sign: otps->elem.v_int %jd abs %ju\n", opts->elem.v_int, ft_intmaxabs(opts->elem.v_int));
+	//printf("res : %u\n", ft_pri_uint_size_prec(ft_intmaxabs(opts->elem.v_int), opts));
 	return (ft_pri_uint_size_prec(ft_intmaxabs(opts->elem.v_int), opts) +
-			((opts->elem.v_int < 0 || opts->sign == PRI_SIGN_ON ||
-			  opts->sign == PRI_SPACE) ? 1 : 0));
+			((opts->elem.v_int < 0 || opts->sign == PRI_SSIGN_ON ||
+			  opts->sign == PRI_SSPACE) ? 1 : 0));
 }
 
 /*
@@ -35,7 +41,7 @@ unsigned int	ft_pri_size_sign(const t_pri_opts *opts)
 ** Must only be called with octal hexa or hexa_maj
 */
 
-unsigned int	ft_pri_size_pref(const t_pri_opts *opts)
+static unsigned int	ft_pri_size_pref(const t_pri_opts *opts)
 {
 	unsigned int	add;
 
@@ -62,7 +68,10 @@ unsigned int	ft_pri_size_width(const t_pri_opts *opts)
 			opts->spec == PRI_HEXA_MAJ)
 		ret = ft_pri_size_pref(opts);
 	else if (opts->spec == PRI_INT)
+	{
 		ret = ft_pri_size_sign(opts);
+		//printf("ft_pri_size_width: je return %u ou %u\n", ret, opts->width);
+	}
 	else
 		ret = ft_pri_uint_size_prec(opts->elem.v_uint, opts);
 	return (ft_intmaxmax(ret, opts->width));

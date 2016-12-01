@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:38:47 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/03 15:38:48 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 18:04:39 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
 void	ft_bzero(void *s, size_t n)
 {

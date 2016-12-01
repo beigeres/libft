@@ -26,7 +26,8 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_math.c \
 		  ft_digits_base.c ft_ll_digits_base.c ft_uintmax_digits_base.c \
 		  ft_sputull_dig.c ft_sputll_dig.c \
-		  ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c
+		  ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c \
+		  ft_pri_format.c ft_pri_fmt_fct.c ft_pri_print.c ft_printf.c ft_vprintf.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
@@ -42,7 +43,7 @@ INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile libft.xml libft.png TODO
 
-.PHONY: fclean all re git no printf check clean 
+.PHONY: fclean all re git no printf check clean
 
 all: $(NAME)
 

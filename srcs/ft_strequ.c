@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 15:45:20 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 21:02:04 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/01 17:43:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
 int	ft_strequ(char const *s1, char const *s2)
 {
