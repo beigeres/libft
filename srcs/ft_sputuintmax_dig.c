@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_sputuintmax_dig.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/04 20:24:51 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/04 20:26:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_base.h"
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
+void	ft_sputuintmax_dig(uintmax_t n, t_base *base,
+		char *str, unsigned int digits)
 {
-	unsigned int	a;
-
-	a = 1;
-	while (n >= (unsigned long long int)base)
+	if (digits == 0)
+		return ;
+	digits--;
+	while (digits > 0)
 	{
-		a++;
-		n /= base;
+		str[digits] = base->str[n % base->size];
+		digits--;
+		n /= base->size;
 	}
-	return (a);
+	str[digits] = base->str[n % base->size];
 }

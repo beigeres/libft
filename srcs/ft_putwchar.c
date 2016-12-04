@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_putwchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/03 17:22:34 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/04 18:54:30 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
+#include "libft.h"
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
+void				ft_putwchar(wchar_t c)
 {
-	unsigned int	a;
+	char	tab[4];
 
-	a = 1;
-	while (n >= (unsigned long long int)base)
-	{
-		a++;
-		n /= base;
-	}
-	return (a);
+	write(1, tab, ft_sputwchar(tab, c));
 }

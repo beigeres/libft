@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 15:03:16 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/25 15:56:15 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/04 21:21:13 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base);
 void			ft_sputll_dig(long long int n, t_base *base, char *str,
 		unsigned int digits);
 void			ft_sputull_dig(unsigned long long int n, t_base *base,
+		char *str, unsigned int digits);
+
+void			ft_sputuintmax_dig(uintmax_t n, t_base *base,
 		char *str, unsigned int digits);
 
 #endif

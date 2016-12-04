@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/03 17:37:20 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/03 17:37:52 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
+#include "ft_math.h"
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
+int						ft_max(int a, int b)
 {
-	unsigned int	a;
+	return ((a > b) ? a : b);
+}
 
-	a = 1;
-	while (n >= (unsigned long long int)base)
-	{
-		a++;
-		n /= base;
-	}
-	return (a);
+unsigned int			ft_umax(unsigned int a, unsigned int b)
+{
+	return ((a > b) ? a : b);
+}
+
+uintmax_t				ft_intmaxabs(intmax_t n)
+{
+	return ((n < 0) ? -n : n);
+}
+
+intmax_t				ft_intmaxmax(intmax_t a, intmax_t b)
+{
+	return ((a > b) ? a : b);
 }

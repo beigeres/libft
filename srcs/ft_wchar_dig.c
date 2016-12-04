@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_wchar_dig.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/04 18:57:11 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/04 18:59:19 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
+#include "libft.h"
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
+unsigned int	ft_wchar_dig(wchar_t c)
 {
-	unsigned int	a;
+	unsigned int	bits;
 
-	a = 1;
-	while (n >= (unsigned long long int)base)
-	{
-		a++;
-		n /= base;
-	}
-	return (a);
+	bits = ft_wchar_bits(c);
+	if (bits <= 7)
+		return (1);
+	else if (bits <= 11)
+		return (2);
+	else if (bits <= 16)
+		return (3);
+	else
+		return (4);
 }

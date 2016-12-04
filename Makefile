@@ -1,4 +1,4 @@
-NAME	= libft.a
+NAME	= libftprintf.a
 
 SRCDIR	= srcs
 OBJDIR	= objs
@@ -23,22 +23,23 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_memdup.c ft_nrealloc.c \
 		  ft_slist.c ft_slist_utils.c ft_slist_it.c \
 		  ft_hlist.c ft_hlist_tools.c ft_hlist_it.c \
-		  ft_math.c \
+		  ft_math.c ft_max.c \
 		  ft_digits_base.c ft_ll_digits_base.c ft_uintmax_digits_base.c \
-		  ft_sputull_dig.c ft_sputll_dig.c \
+		  ft_sputull_dig.c ft_sputll_dig.c ft_sputuintmax_dig.c \
 		  ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c \
-		  ft_pri_format.c ft_pri_fmt_fct.c ft_pri_print.c ft_printf.c ft_vprintf.c
+		  ft_pri_format.c ft_pri_fmt_fct.c ft_pri_print.c ft_printf.c ft_vprintf.c \
+		  ft_putwchar.c ft_sputwchar.c ft_wchar_bits.c ft_wchar_dig.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
 OBJ		= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR)
-LDFLAGS	= 
+CFLAGS	= -Wall -Wextra -Werror -I$(INCDIR) -g
+LDFLAGS	=  -g
 
 INCNAM	= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
-		  ft_slist.h ft_hlist.h
+		  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile libft.xml libft.png TODO
@@ -63,7 +64,7 @@ no:
 
 printf:
 	@echo "Detection des printf :\033[1;31m"
-	@cat $(SRC) $(INC) | grep printf | cat
+	@grep printf -r $(SRCDIR) $(INCDIR) | cat
 	@printf "\033[0m"
 
 check: no printf

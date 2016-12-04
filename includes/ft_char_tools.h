@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_char_tools.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/28 19:11:30 by etrobert          #+#    #+#             */
+/*   Updated: 2016/11/28 19:14:16 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
+#ifndef CHAR_TOOLS_H
+# define CHAR_TOOLS_H
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
-{
-	unsigned int	a;
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
+int	ft_isascii (int c);
+int	ft_isprint(int c);
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 
-	a = 1;
-	while (n >= (unsigned long long int)base)
-	{
-		a++;
-		n /= base;
-	}
-	return (a);
-}
+#endif

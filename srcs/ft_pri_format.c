@@ -6,35 +6,42 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 13:53:01 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/01 16:15:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/04 20:41:52 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_bool		ft_pri_format_flags(char fmt, t_pri_opts *opts)
+static t_bool		ft_pri_format_flags(char fmt, t_pri_opts *opts)
 {
 	if (fmt == '-')
 		opts->left_justify = TRUE;
 	else if (fmt == '+')
 		opts->sign = PRI_SSIGN_ON;
-	else if (fmt == ' ' && opts->sign != PRI_SSIGN_ON)
-		opts->sign = PRI_SSPACE;
+	else if (fmt == ' ')
+	{
+		if (opts->sign != PRI_SSIGN_ON)
+			opts->sign = PRI_SSPACE;
+	}
 	else if (fmt == '#')
 		opts->sharp = TRUE;
 	else if (fmt == '0')
-		opts->zero = TRUE;
+		opts->width_char = '0';
 	else
 		return (FALSE);
 	return (TRUE);
 }
 
-t_bool		ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
+static t_bool		ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
 {
 	if (fmt == 'd' || fmt == 'i')
 		ft_pri_fmt_d(opts, ap);
 	else if (fmt == 'u')
 		ft_pri_fmt_u(opts, ap);
+	else if (fmt == 'U')
+		ft_pri_fmt_u_maj(opts, ap);
+	else if (fmt == 'b')
+		ft_pri_fmt_b(opts, ap);
 	else if (fmt == 'o')
 		ft_pri_fmt_o(opts, ap);
 	else if (fmt == 'x')
@@ -54,7 +61,7 @@ t_bool		ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
 	return (TRUE);
 }
 
-t_bool		ft_pri_format_length(char fmt, t_pri_opts *opts)
+static t_bool		ft_pri_format_length(char fmt, t_pri_opts *opts)
 {
 	if (fmt == 'h')
 	{
@@ -81,7 +88,7 @@ t_bool		ft_pri_format_length(char fmt, t_pri_opts *opts)
 	return (TRUE);
 }
 
-t_bool		ft_pri_format_digit(char fmt, t_pri_opts *opts, t_pri_mode *mode)
+static t_bool		ft_pri_format_digit(char fmt, t_pri_opts *opts, t_pri_mode *mode)
 {
 	if (!ft_isdigit(fmt))
 		return (FALSE);
@@ -98,7 +105,7 @@ t_bool		ft_pri_format_digit(char fmt, t_pri_opts *opts, t_pri_mode *mode)
 }
 
 //0 causing problem : is it part of a number or the 0 flag ?
-t_pri_opts	*ft_pri_format(const char *fmt, va_list ap, unsigned int *i)
+static t_pri_opts	*ft_pri_format(const char *fmt, va_list ap, unsigned int *i)
 {
 	t_pri_opts	*opts;
 	t_pri_mode	mode;
@@ -108,16 +115,22 @@ t_pri_opts	*ft_pri_format(const char *fmt, va_list ap, unsigned int *i)
 		return (NULL);
 	while (fmt[*i] != '\0')
 	{
-		if (fmt[*i] == '.')
+		if (fmt[*i] == '0' && mode == PRI_MDEFAULT)
+			opts->width_char = '0';
+		else if (fmt[*i] == '.')
 		{
 			mode = PRI_MPREC;
 			opts->prec_set = TRUE;
+			opts->width_char = ' ';
+			opts->precision = 0;
 		}
 		else if (!ft_pri_format_digit(fmt[*i], opts, &mode))
 		{
 			mode = PRI_MDEFAULT;
 			if (ft_pri_format_spec(fmt[*i], opts, ap))
+			{
 				return (opts);
+			}
 			if (!ft_pri_format_flags(fmt[*i], opts) &&
 					!ft_pri_format_length(fmt[*i], opts))
 			{
@@ -131,7 +144,7 @@ t_pri_opts	*ft_pri_format(const char *fmt, va_list ap, unsigned int *i)
 	return (NULL);
 }
 
-int			ft_pri_decrypt_format(const char *fmt, va_list ap, t_hlist *opts)
+int						ft_pri_decrypt_format(const char *fmt, va_list ap, t_hlist *opts)
 {
 	unsigned int	n;
 	unsigned int	i;
@@ -144,18 +157,22 @@ int			ft_pri_decrypt_format(const char *fmt, va_list ap, t_hlist *opts)
 		if (fmt[i] == '%')
 		{
 			i++;
-			if ((elem = ft_pri_format(fmt, ap, &i)) == NULL)
-				return (-1);
-			if (!ft_hlist_push_back(opts, elem))
-				return (-1);
-			printf("Bonjour %p\n", elem);
-			elem->size = ft_pri_size_width(elem);
-			elem->next_char = i + 1;
-			n += elem->size;
+			if ((elem = ft_pri_format(fmt, ap, &i)) != NULL)
+			{
+				if (!ft_hlist_push_back(opts, elem))
+					return (-1);
+				elem->little_size = ft_pri_size_little_size(elem);
+				elem->size = ft_pri_size_width(elem);
+				elem->next_char = i + 1;
+				n += elem->size;
+				i++;
+			}
 		}
 		else
+		{
 			n++;
-		i++;
+			i++;
+		}
 	}
 	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/01 18:12:51 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/04 18:59:29 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@
 
 # include <stdarg.h>
 
-/*
-** Needef for INT_MIN definition ft_putnbr ft_digits
-*/
-# include <limits.h>
-
 # include "ft_bool.h"
 # include "ft_hlist.h"
 # include "ft_slist.h"
@@ -51,12 +46,6 @@
 # include "ft_string.h"
 # include "ft_char_tools.h"
 
-# define FT_INT_MIN -2147483648
-# define FT_INT_MAX  2147483647
-# define FT_INT_MIN_STR "-2147483648"
-# define FT_INT_MAX_STR "2147483647"
-# define FT_INT_MIN_DIG 11
-
 typedef struct	s_list
 {
 	void			*content;
@@ -64,15 +53,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-/*
-** Part 1
-*/
-
 int				ft_atoi(const char *str);
-
-/*
-** Part 2
-*/
 
 char			*ft_itoa(int n);
 
@@ -85,8 +66,14 @@ void			ft_putstr_fd(const char *s, int fd);
 void			ft_putendl_fd(const char *str, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
+
+unsigned int	ft_wchar_bits(wchar_t c);
+void			ft_putwchar(wchar_t c);
+size_t			ft_sputwchar(char *str, wchar_t c);
+unsigned int	ft_wchar_dig(wchar_t c);
+
 /*
-** Bonus Part
+** Libft lists
 */
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
