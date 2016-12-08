@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 18:02:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/01 18:06:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/08 12:06:43 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 ** Needed for size_t
 */
 
-#include <stdlib.h>
-
+# include <stdlib.h>
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);

@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 18:46:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 20:06:09 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/05 17:10:51 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_wchar.h"
 
 static size_t		ft_putwchar_sub(wchar_t *c, char *str, size_t k)
 {

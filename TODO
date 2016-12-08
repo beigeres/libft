@@ -7,3 +7,5 @@ printf BONUS : binaire
 do wchar_t char and string
 
 utils to tools
+
+fonction base qui est la seule a avoir les deus statiques

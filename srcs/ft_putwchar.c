@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 17:22:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 18:54:30 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/05 17:10:39 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_wchar.h"
 
 void				ft_putwchar(wchar_t c)
 {

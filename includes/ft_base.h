@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 15:03:16 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 21:21:13 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/05 17:59:05 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@
 
 # include <stdint.h>
 
+# include "ft_string.h"
+
 typedef struct	s_base
 {
 	unsigned int	size;
 	char			*str;
 }				t_base;
+
+t_base			*ft_base_new(const char *str, unsigned int size);
+void			ft_base_delete(t_base *base);
 
 void			ft_putnbr_fd_base(int n, int fd, t_base *base);
 char			*ft_itoa_base(int n, unsigned int b);

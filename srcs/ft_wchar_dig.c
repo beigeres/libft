@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 18:57:11 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 18:59:19 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/05 17:10:26 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_wchar.h"
 
 unsigned int	ft_wchar_dig(wchar_t c)
 {

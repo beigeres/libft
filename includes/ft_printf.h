@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 20:42:40 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/08 12:09:37 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,14 @@
 # include "ft_bool.h"
 # include "ft_char_tools.h"
 # include "ft_string.h"
+# include "ft_wchar.h"
 
 typedef union	u_pri_elem
 {
-	intmax_t	v_int; 
-	uintmax_t	v_uint; // used for UINT OCTAL HEXA HEXA_MAJ
+	intmax_t	v_int;
+	uintmax_t	v_uint;
 	char		v_char;
+	wchar_t		v_wchar;
 	char		*v_str;
 	wchar_t		*v_wstr;
 }				t_pri_elem;
@@ -91,6 +93,7 @@ typedef enum	e_pri_spec
 	PRI_WSTRING,
 	PRI_PERCENT,
 	PRI_CHAR,
+	PRI_WCHAR,
 	PRI_POINTER
 }				t_pri_spec;
 
@@ -99,11 +102,11 @@ typedef enum	e_pri_length
 	PRI_DEFAULT,
 	PRI_HH,
 	PRI_H,
+	PRI_Z,
+	PRI_T,
 	PRI_L,
 	PRI_LL,
-	PRI_J,
-	PRI_Z,
-	PRI_T
+	PRI_J
 }				t_pri_length;
 
 typedef struct	s_pri_opts
@@ -133,22 +136,30 @@ typedef struct	s_pri_opts
 unsigned int	ft_pri_size_width(t_pri_opts *opts);
 unsigned int	ft_pri_size_little_size(const t_pri_opts *opts);
 
+t_bool	ft_pri_is_number(const t_pri_opts *opts);
+
 t_pri_opts		*ft_pri_opts_new(void);
+void			ft_pri_opts_delete(t_pri_opts *opts);
 void			ft_pri_set_opts_default(t_pri_opts *opt);
 
 void			ft_pri_fmt_d(t_pri_opts *opts, va_list ap);
+void			ft_pri_fmt_d_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_u(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_u_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_b(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_o(t_pri_opts *opts, va_list ap);
+void			ft_pri_fmt_o_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_x(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_x_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_c(t_pri_opts *opts, va_list ap);
+void			ft_pri_fmt_c_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_s(t_pri_opts *opts, va_list ap);
+void			ft_pri_fmt_s_maj(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_p(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_percent(t_pri_opts *opts);
 
-int				ft_pri_decrypt_format(const char *fmt, va_list ap, t_hlist *opts);
+int				ft_pri_decrypt_format(const char *fmt, va_list ap,
+		t_hlist *opts);
 void			ft_pri_print(char *str, const char *fmt, t_hlist *opts);
 
 int				ft_printf(const char *fmt, ...);

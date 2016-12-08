@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 18:59:29 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/05 17:09:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # include "ft_math.h"
 # include "ft_string.h"
 # include "ft_char_tools.h"
+# include "ft_wchar.h"
 
 typedef struct	s_list
 {
@@ -65,12 +66,6 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(const char *s, int fd);
 void			ft_putendl_fd(const char *str, int fd);
 void			ft_putnbr_fd(int n, int fd);
-
-
-unsigned int	ft_wchar_bits(wchar_t c);
-void			ft_putwchar(wchar_t c);
-size_t			ft_sputwchar(char *str, wchar_t c);
-unsigned int	ft_wchar_dig(wchar_t c);
 
 /*
 ** Libft lists

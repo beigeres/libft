@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar_bits.c                                    :+:      :+:    :+:   */
+/*   ft_sputwstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 18:51:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/05 17:10:15 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/07 16:13:59 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/07 16:28:06 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_wchar.h"
 
-unsigned int	ft_wchar_bits(wchar_t c)
+size_t	ft_sputwstr(char *str, const wchar_t *src)
 {
-	unsigned int	a;
+	int	i;
 
-	a = 1;
-	while (c >= 2)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		a++;
-		c /= 2;
+		str += ft_sputwchar(str, src[i]);
+		i++;
 	}
-	return (a);
+	return (i);
 }
