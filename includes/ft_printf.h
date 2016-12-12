@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/11 19:14:16 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/12 19:06:28 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef enum	e_pri_mode
 {
 	PRI_MWIDTH,
 	PRI_MPREC,
+	PRI_MPREC_STARTING,
 	PRI_MDEFAULT
 }				t_pri_mode;
 
