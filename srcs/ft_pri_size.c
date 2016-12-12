@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:37:58 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 16:21:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/12 20:08:30 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_pri_size_wchar(wchar_t wc)
+int				ft_pri_size_wchar(wchar_t wc)
 {
 	if ((wc >= 55296 && wc < 57344) ||
 			(wc >= 1114112))
@@ -20,11 +20,11 @@ int	ft_pri_size_wchar(wchar_t wc)
 	return (ft_wchar_dig(wc));
 }
 
-int	ft_pri_wlen(const t_pri_opts *opts)
+int				ft_pri_wlen(const t_pri_opts *opts)
 {
 	unsigned int	i;
 	unsigned int	n;
-	int	inc;
+	int				inc;
 
 	n = 0;
 	inc = 0;
@@ -68,7 +68,7 @@ unsigned int	ft_pri_size_str(const t_pri_opts *opts)
 ** Computes the size of the element according to the width parameter
 */
 
-int	ft_pri_size_little_size(const t_pri_opts *opts)
+int				ft_pri_size_little_size(const t_pri_opts *opts)
 {
 	if (opts->spec == PRI_OCTAL)
 		return (ft_pri_octal_prec(opts));
@@ -88,12 +88,4 @@ int	ft_pri_size_little_size(const t_pri_opts *opts)
 	else if (opts->spec == PRI_CHAR || opts->spec == PRI_PERCENT)
 		return (1);
 	return (0);
-}
-
-t_bool			ft_pri_is_number(const t_pri_opts *opts)
-{
-	return (opts->spec == PRI_INT || opts->spec == PRI_UINT ||
-			opts->spec == PRI_OCTAL || opts->spec == PRI_HEXA ||
-			opts->spec == PRI_HEXA || opts->spec == PRI_HEXA_MAJ ||
-			opts->spec == PRI_BIN || opts->spec == PRI_POINTER);
 }

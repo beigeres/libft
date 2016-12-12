@@ -29,7 +29,7 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c \
 		  ft_pri_format.c ft_pri_print.c ft_printf.c ft_vprintf.c \
 		  ft_pri_fmt_fct.c ft_pri_fmt_fct_ox.c ft_pri_fmt_fct_cs.c \
-		  ft_pri_fmt_fct_u.c \
+		  ft_pri_fmt_fct_u.c ft_pri_is_number.c ft_pri_decrypt_format.c \
 		  ft_putwchar.c ft_sputwchar.c ft_wchar_bits.c ft_wchar_dig.c \
 		  ft_sputwstr.c ft_pri_size_fct.c ft_pri_print_fct.c \
 		  ft_pri_format_fct.c ft_pri_size_width.c ft_pri_format_units.c \

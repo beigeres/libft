@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 19:06:28 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/12 20:30:59 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,10 +167,16 @@ t_bool			ft_pri_format_length(char fmt, t_pri_opts *opts);
 t_bool			ft_pri_format_unit(const char *fmt, va_list ap,
 		unsigned int *i, t_pri_opts *opts);
 
+/*
+** ft_pri_is_number.c
+*/
+
+t_bool			ft_pri_is_number(const t_pri_opts *opts);
+
 unsigned int	ft_pri_size_width(t_pri_opts *opts);
 int				ft_pri_size_little_size(const t_pri_opts *opts);
 
-t_bool			ft_pri_is_number(const t_pri_opts *opts);
+t_pri_opts		*ft_pri_format(const char *fmt, va_list ap, unsigned int *i);
 
 t_pri_opts		*ft_pri_opts_new(void);
 void			ft_pri_opts_delete(t_pri_opts *opts);
