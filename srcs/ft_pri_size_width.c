@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar.h                                         :+:      :+:    :+:   */
+/*   ft_pri_size_width.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 17:09:20 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 15:14:14 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/08 18:02:23 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/08 18:03:40 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_WCHAR_H
-# define FT_WCHAR_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <wchar.h>
-
-unsigned int	ft_wchar_bits(wchar_t c);
-void			ft_putwchar(wchar_t c);
-size_t			ft_sputwchar(char *str, wchar_t c);
-unsigned int	ft_wchar_dig(wchar_t c);
-
-size_t			ft_sputwstr(char *str, const wchar_t *src);
-
-#endif
+unsigned int	ft_pri_size_width(t_pri_opts *opts)
+{
+	if (opts->width_char == '0' && !opts->left_justify &&
+			opts->width > opts->little_size && ft_pri_is_number(opts))
+	{
+		opts->precision += opts->width - opts->little_size;
+		opts->little_size += opts->width - opts->little_size;
+	}
+	return (ft_umax(opts->little_size, opts->width));
+}

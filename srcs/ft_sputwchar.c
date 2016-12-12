@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 18:46:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/05 17:10:51 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/08 15:35:30 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_wchar.h"
 
-static size_t		ft_putwchar_sub(wchar_t *c, char *str, size_t k)
+static size_t	ft_putwchar_sub(wchar_t *c, char *str, size_t k)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static size_t		ft_putwchar_sub(wchar_t *c, char *str, size_t k)
 	return (k + 1);
 }
 
-size_t	ft_sputwchar(char *str, wchar_t c)
+size_t			ft_sputwchar(char *str, wchar_t c)
 {
 	unsigned int	bits;
 	size_t			size;

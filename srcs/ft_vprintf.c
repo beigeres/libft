@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:06:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 12:21:36 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/08 15:10:30 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_vsprintf(char *str, const char *fmt, va_list ap)
 		return (-1);
 	}
 	ft_pri_print(str, fmt, opts);
-	ft_hlist_apply(opts, (t_f_action) &ft_pri_opts_delete);
+	ft_hlist_apply(opts, (t_f_action) & ft_pri_opts_delete);
 	ft_hlist_delete(opts);
 	return (n);
 }
@@ -42,8 +42,8 @@ int		ft_vsprintf(char *str, const char *fmt, va_list ap)
 
 int		ft_vasprintf(char **ret, const char *fmt, va_list ap)
 {
-	t_hlist			*opts;
-	int	n;
+	t_hlist	*opts;
+	int		n;
 
 	if ((opts = ft_hlist_new()) == NULL)
 		return (-1);
@@ -55,7 +55,7 @@ int		ft_vasprintf(char **ret, const char *fmt, va_list ap)
 	if ((*ret = malloc(sizeof(char) * (n + 1))) == NULL)
 		return (-1);
 	ft_pri_print(*ret, fmt, opts);
-	ft_hlist_apply(opts, (t_f_action)&ft_pri_opts_delete);
+	ft_hlist_apply(opts, (t_f_action) & ft_pri_opts_delete);
 	ft_hlist_delete(opts);
 	return (n);
 }

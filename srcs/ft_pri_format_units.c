@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar.h                                         :+:      :+:    :+:   */
+/*   ft_pri_format_units.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 17:09:20 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 15:14:14 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/08 19:00:41 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/08 19:03:40 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_WCHAR_H
-# define FT_WCHAR_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <wchar.h>
-
-unsigned int	ft_wchar_bits(wchar_t c);
-void			ft_putwchar(wchar_t c);
-size_t			ft_sputwchar(char *str, wchar_t c);
-unsigned int	ft_wchar_dig(wchar_t c);
-
-size_t			ft_sputwstr(char *str, const wchar_t *src);
-
-#endif
+t_bool		ft_pri_format_unit(const char *fmt,
+		va_list ap, unsigned int *i, t_pri_opts *opts)
+{
+	if (ft_pri_format_spec(fmt[*i], opts, ap))
+	{
+		++(*i);
+		return (TRUE);
+	}
+	if (!ft_pri_format_flags(fmt[*i], opts) &&
+			!ft_pri_format_length(fmt[*i], opts))
+	{
+		opts->spec = PRI_CHAR;
+		opts->elem.v_char = fmt[*i];
+		++(*i);
+		return (TRUE);
+	}
+	return (FALSE);
+}

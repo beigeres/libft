@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 12:09:37 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/11 19:14:16 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,14 +133,49 @@ typedef struct	s_pri_opts
 	unsigned int	next_char;
 }				t_pri_opts;
 
-unsigned int	ft_pri_size_width(t_pri_opts *opts);
-unsigned int	ft_pri_size_little_size(const t_pri_opts *opts);
+/*
+** ft_pri_size_fct.c
+*/
 
-t_bool	ft_pri_is_number(const t_pri_opts *opts);
+unsigned int	ft_pri_octal_prec(const t_pri_opts *opts);
+unsigned int	ft_pri_size_pref(const t_pri_opts *opts);
+unsigned int	ft_pri_uint_size_digs(uintmax_t n, const t_pri_opts *opts);
+unsigned int	ft_pri_size_sign(const t_pri_opts *opts);
+unsigned int	ft_pri_uint_size_prec(uintmax_t n, const t_pri_opts *opts);
+
+/*
+** ft_pri_print_fct.c
+*/
+
+void			ft_pri_print_str(char *str, t_pri_opts *opts);
+void			ft_pri_print_pref(char *str, t_pri_opts *opts);
+void			ft_pri_print_wstr(char *str, t_pri_opts *opts);
+
+/*
+** ft_pri_format_fct.c
+*/
+
+t_bool			ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap);
+t_bool			ft_pri_format_flags(char fmt, t_pri_opts *opts);
+t_bool			ft_pri_format_length(char fmt, t_pri_opts *opts);
+
+/*
+** ft_pri_format_units.c
+*/
+
+t_bool			ft_pri_format_unit(const char *fmt, va_list ap,
+		unsigned int *i, t_pri_opts *opts);
+
+unsigned int	ft_pri_size_width(t_pri_opts *opts);
+int				ft_pri_size_little_size(const t_pri_opts *opts);
+
+t_bool			ft_pri_is_number(const t_pri_opts *opts);
 
 t_pri_opts		*ft_pri_opts_new(void);
 void			ft_pri_opts_delete(t_pri_opts *opts);
 void			ft_pri_set_opts_default(t_pri_opts *opt);
+
+void			ft_pri_fmt_unsigned(t_pri_opts *opts, va_list ap);
 
 void			ft_pri_fmt_d(t_pri_opts *opts, va_list ap);
 void			ft_pri_fmt_d_maj(t_pri_opts *opts, va_list ap);
