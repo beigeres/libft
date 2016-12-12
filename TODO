@@ -2,7 +2,7 @@ strsplit utiliser strchr
 strsplit verifier la valeur de retour de get_word pour un NULL
 strlcat gerer quon accede pas a la derniere case du buffer s1 quand i == size
 
-printf BONUS : binaire
+printf BONUS : binaire | .* | * | vprintf | vaprintf | dprintf | vdprintf | sprintf | vsprintf
 
 do wchar_t char and string
 

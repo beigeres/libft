@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 13:53:01 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 19:08:35 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/12 19:39:46 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,29 @@ static void			ft_pri_format_dot(t_pri_opts *opts, t_pri_mode *mode)
 	opts->precision = 0;
 }
 
-static void			ft_pri_format_star(t_pri_opts *opts, t_pri_mode *mode, va_list ap)
+static void	ft_pri_format_star(t_pri_opts *opts, t_pri_mode *mode, va_list ap)
 {
+	int	n;
+
 	if (*mode == PRI_MPREC_STARTING)
-		opts->precision = va_arg(ap, unsigned int);
-	else if (*mode == PRI_MDEFAULT)
-		opts->width = va_arg(ap, unsigned int);
+	{
+		n = va_arg(ap, int);
+		if (n < 0)
+			opts->prec_set = FALSE;
+		else
+			opts->precision = n;
+	}
+	else
+	{
+		n = va_arg(ap, int);
+		if (n < 0)
+		{
+			opts->left_justify = TRUE;
+			opts->width = (unsigned int)-n;
+		}
+		else
+			opts->width = (unsigned int)n;
+	}
 	*mode = PRI_MDEFAULT;
 }
 
