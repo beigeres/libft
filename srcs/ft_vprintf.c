@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:06:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 15:10:30 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:10:19 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ int		ft_vsprintf(char *str, const char *fmt, va_list ap)
 	ft_hlist_delete(opts);
 	return (n);
 }
-
-/*
-** Ne peut pas appeler vsprintf car vsprintf doit calculer la taille
-** et vasprintf aussi pour malloc
-*/
 
 int		ft_vasprintf(char **ret, const char *fmt, va_list ap)
 {

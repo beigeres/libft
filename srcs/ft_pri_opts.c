@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:36:51 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/07 15:46:31 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:11:16 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_pri_opts		*ft_pri_opts_new(void)
 
 void			ft_pri_opts_delete(t_pri_opts *opts)
 {
+	if (opts == NULL)
+		return ;
 	if (opts->base != NULL)
 		ft_base_delete(opts->base);
 	free(opts);

@@ -6,19 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:37:58 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 20:08:30 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:04:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int				ft_pri_size_wchar(wchar_t wc)
-{
-	if ((wc >= 55296 && wc < 57344) ||
-			(wc >= 1114112))
-		return (-1);
-	return (ft_wchar_dig(wc));
-}
 
 int				ft_pri_wlen(const t_pri_opts *opts)
 {

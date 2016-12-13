@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar.h                                         :+:      :+:    :+:   */
+/*   ft_size_wchar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 17:09:20 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:04:07 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/13 20:03:36 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/13 20:03:58 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_WCHAR_H
-# define FT_WCHAR_H
+#include "ft_wchar.h"
 
-# include <unistd.h>
-# include <wchar.h>
+int	ft_pri_size_wchar(wchar_t wc)
+{
+	if (wc < 0 || (wc >= 55296 && wc < 57344) ||
+			(wc >= 1114112))
+		return (-1);
+	return (ft_wchar_dig(wc));
+}
 
-unsigned int	ft_wchar_bits(wchar_t c);
-void			ft_putwchar(wchar_t c);
-size_t			ft_sputwchar(char *str, wchar_t c);
-unsigned int	ft_wchar_dig(wchar_t c);
-
-size_t			ft_sputwstr(char *str, const wchar_t *src);
-size_t			ft_sputnwstr(char *str, const wchar_t *src, size_t len);
-
-int				ft_pri_size_wchar(wchar_t wc);
-
-#endif
