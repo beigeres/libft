@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/05 17:09:50 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 16:38:59 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@
 # include "ft_string.h"
 # include "ft_char_tools.h"
 # include "ft_wchar.h"
+# include "ft_alloc.h"
+# include "get_next_line.h"
 
 typedef struct	s_list
 {
@@ -88,7 +90,5 @@ int				ft_isspace(int c);
 void			*ft_memdup(const void *ptr, size_t size);
 
 void			*ft_lstfold(t_list *lst, void *(*f)(void *, void *));
-
-void			*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
 
 #endif

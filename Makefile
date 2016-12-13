@@ -33,7 +33,7 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_putwchar.c ft_sputwchar.c ft_wchar_bits.c ft_wchar_dig.c \
 		  ft_sputwstr.c ft_pri_size_fct.c ft_pri_print_fct.c \
 		  ft_pri_format_fct.c ft_pri_size_width.c ft_pri_format_units.c \
-		  ft_base.c
+		  ft_base.c get_next_line.c
 		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
@@ -45,7 +45,7 @@ LDFLAGS	=  -g
 
 INCNAM	= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 		  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
-		  ft_wchar.h
+		  ft_wchar.h get_next_line.h ft_alloc.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile libft.xml libft.png TODO
@@ -66,7 +66,7 @@ git:
 
 no:
 	@echo "Passage de la norminette :"
-	@norminette $(SRC) $(INC)
+	@norminette $(SRC) $(INC)| grep -B1 Error | cat
 
 printf:
 	@echo "Detection des printf :\033[1;31m"
