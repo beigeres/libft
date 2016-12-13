@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 19:54:26 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:04:41 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:19:10 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_sputnwstr(char *str, const wchar_t *src, size_t len)
 {
-	int	i;
-	size_t n;
+	int		i;
+	size_t	n;
 
 	i = 0;
 	n = 0;

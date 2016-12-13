@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 20:03:36 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:03:58 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:19:18 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,3 @@ int	ft_pri_size_wchar(wchar_t wc)
 		return (-1);
 	return (ft_wchar_dig(wc));
 }
-

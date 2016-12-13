@@ -6,14 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 18:50:13 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:10:58 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/13 20:18:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_slist.h"
-
-//DEBUG
-#include <stdio.h>
 
 void		*ft_slist_find(t_slist *slist, void *ref, t_f_comp f)
 {
