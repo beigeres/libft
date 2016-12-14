@@ -1,4 +1,4 @@
-NAME	= libftprintf.a
+NAME	= libft.a
 
 SRCDIR	= srcs
 OBJDIR	= objs
@@ -18,8 +18,6 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		  ft_putnbr_fd_base.c ft_itoa_base.c \
-		  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
-		  ft_lstiter.c ft_lstmap.c ft_lstfold.c \
 		  ft_memdup.c ft_nrealloc.c \
 		  ft_slist.c ft_slist_tools.c ft_slist_it.c \
 		  ft_hlist.c ft_hlist_tools.c ft_hlist_it.c \
@@ -34,8 +32,12 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_sputwstr.c ft_sputnwstr.c ft_pri_size_fct.c ft_pri_print_fct.c \
 		  ft_pri_format_fct.c ft_pri_size_width.c ft_pri_format_units.c \
 		  ft_size_wchar.c ft_pri_valid_format.c ft_pri_print_fmt.c \
-		  ft_base.c get_next_line.c 
-		  #ft_plst.c ft_plst_push.c ft_plst_utils.c
+		  ft_base.c get_next_line.c \
+		  ft_list_push_back.c ft_list_new.c \
+		  ft_list_e_new.c ft_list_empty.c ft_list_push_front.c \
+		  ft_list_begin.c ft_list_end.c ft_list_it_inc.c ft_list_it_advance.c \
+		  ft_list_it_next.c ft_list_it_next_n.c ft_list_it_get.c \
+		  ft_list_front.c ft_list_back.c ft_list_insert.c
 
 SRC		= $(SRCNAM:%=$(SRCDIR)/%)
 OBJ		= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
@@ -46,7 +48,7 @@ LDFLAGS	=  -g
 
 INCNAM	= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 		  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
-		  ft_wchar.h get_next_line.h ft_alloc.h
+		  ft_wchar.h get_next_line.h ft_alloc.h ft_list.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
 GIT		= Makefile libft.xml libft.png TODO auteur

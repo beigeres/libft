@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 16:38:59 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/14 16:19:45 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,16 @@
 # include "ft_wchar.h"
 # include "ft_alloc.h"
 # include "get_next_line.h"
+# include "ft_list.h"
 
+/*
 typedef struct	s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+*/
 
 int				ft_atoi(const char *str);
 
@@ -71,7 +74,6 @@ void			ft_putnbr_fd(int n, int fd);
 
 /*
 ** Libft lists
-*/
 
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -79,6 +81,7 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *elem);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+*/
 
 /*
 ** Individual Part

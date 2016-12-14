@@ -19,3 +19,12 @@ vsprintf
 
 ordre des flags quelconque
 
+list:
+
+ft_list_insert doesnt work when it is on the last
+void			ft_list_delete(t_list *list);
+
+void			ft_list_resize(t_list *list, t_size_type n);
+void			ft_list_resize_to(t_list *list, t_size_type n, void *val);
+
+void			ft_list_assign(t_list *list, t_size_type n, const void *val);
