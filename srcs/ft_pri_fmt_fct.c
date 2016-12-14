@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 16:00:37 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 15:28:14 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/14 11:24:17 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,11 @@ void	ft_pri_fmt_b(t_pri_opts *opts, va_list ap)
 void	ft_pri_fmt_percent(t_pri_opts *opts)
 {
 	opts->spec = PRI_PERCENT;
+}
+
+void	ft_pri_fmt_fmt(t_pri_opts *opts, va_list ap)
+{
+	opts->base = ft_base_new("0123456789", 10);
+	opts->spec = PRI_FMT;
+	opts->elem.v_fmt = va_arg(ap, t_pri_fmt);
 }

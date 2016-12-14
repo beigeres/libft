@@ -6,21 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 18:57:31 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 16:25:16 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/14 11:55:06 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	ft_pri_print_fmt(char **str, const char *fmt, int i)
-{
-	while (fmt[i] != '\0' && fmt[i] != '%')
-	{
-		**str = fmt[i];
-		i++;
-		(*str)++;
-	}
-}
 
 static void	ft_pri_print_sign(char *str, t_pri_opts *opts)
 {
@@ -46,6 +36,16 @@ static void	ft_pri_print_sign(char *str, t_pri_opts *opts)
 			str + n, opts->little_size - n);
 }
 
+void		ft_pri_print_fmt_opts(char *str, t_pri_opts *opts)
+{
+	if (!ft_pri_valid_format(opts->elem.v_fmt))
+		return ;
+	ft_strcpy(str, "\033[");
+	ft_sputuintmax_dig(opts->elem.v_fmt, opts->base, str + 2,
+			opts->little_size - 3);
+	str[opts->little_size - 1] = 'm';
+}
+
 static void	ft_pri_print_opts(char *str, t_pri_opts *opts)
 {
 	if (opts->spec == PRI_STRING)
@@ -66,6 +66,8 @@ static void	ft_pri_print_opts(char *str, t_pri_opts *opts)
 		ft_sputwchar(str, opts->elem.v_wchar);
 	else if (opts->spec == PRI_WSTRING)
 		ft_pri_print_wstr(str, opts);
+	else if (opts->spec == PRI_FMT)
+		ft_pri_print_fmt_opts(str, opts);
 }
 
 static void	ft_pri_print_width(char *str, t_pri_opts *opts)

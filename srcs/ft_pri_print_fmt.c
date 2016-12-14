@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pri_size_width.c                                :+:      :+:    :+:   */
+/*   ft_pri_print_fmt.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 18:02:23 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:10:17 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 11:53:34 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/14 11:55:38 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_pri_size_width(t_pri_opts *opts)
+void	ft_pri_print_fmt(char **str, const char *fmt, int i)
 {
-	if (opts->width_char == '0' && !opts->left_justify &&
-			opts->width > opts->little_size && ft_pri_is_number(opts))
+	while (fmt[i] != '\0' && fmt[i] != '%')
 	{
-		opts->precision += opts->width - opts->little_size;
-		opts->little_size += opts->width - opts->little_size;
+		**str = fmt[i];
+		i++;
+		(*str)++;
 	}
-	if (opts->spec == PRI_FMT)
-		return (opts->little_size);
-	return (ft_umax(opts->little_size, opts->width));
 }

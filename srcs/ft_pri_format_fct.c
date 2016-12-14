@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:54:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 17:58:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/14 11:12:37 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_bool				ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
 		ft_pri_fmt_p(opts, ap);
 	else if (fmt == '%')
 		ft_pri_fmt_percent(opts);
+	else if (fmt == 'k')
+		ft_pri_fmt_fmt(opts, ap);
 	else
 		return (ft_pri_format_numbers(fmt, opts, ap));
 	return (TRUE);

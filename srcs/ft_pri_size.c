@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:37:58 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:04:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/14 11:38:49 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ unsigned int	ft_pri_size_str(const t_pri_opts *opts)
 	return (n);
 }
 
+unsigned int	ft_pri_size_fmt(const t_pri_opts *opts)
+{
+	if (ft_pri_valid_format(opts->elem.v_fmt))
+		return (3 + ft_digits_base(opts->elem.v_fmt, 10));
+	else
+		return (0);
+}
+
 /*
 ** Computes the size of the element according to the width parameter
 */
@@ -79,5 +87,7 @@ int				ft_pri_size_little_size(const t_pri_opts *opts)
 		return (ft_pri_size_wchar(opts->elem.v_wchar));
 	else if (opts->spec == PRI_CHAR || opts->spec == PRI_PERCENT)
 		return (1);
+	else if (opts->spec == PRI_FMT)
+		return (ft_pri_size_fmt(opts));
 	return (0);
 }
