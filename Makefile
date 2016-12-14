@@ -49,7 +49,7 @@ INCNAM	= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 		  ft_wchar.h get_next_line.h ft_alloc.h
 INC		= $(INCNAM:%=$(INCDIR)/%)
 
-GIT		= Makefile libft.xml libft.png TODO
+GIT		= Makefile libft.xml libft.png TODO auteur
 
 .PHONY: fclean all re git no printf check clean
 
