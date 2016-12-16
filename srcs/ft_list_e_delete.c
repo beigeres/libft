@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_insert.c                                   :+:      :+:    :+:   */
+/*   ft_list_e_delete.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 19:38:14 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/15 19:03:13 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void			ft_list_insert(t_list *list, t_list_it it, void *val)
+void	ft_list_e_delete(t_list_e *elem)
 {
-	t_list_e	*elem;
-	
-	if (list == NULL)
+	if (elem == NULL)
 		return ;
-	if (it == NULL)
-	{
-		ft_list_push_back(list, val);
-		return ;
-	}
-	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
-		return ;
-	it->prev = elem;
-	if (elem->prev != NULL)
-		elem->prev->next = elem;
-	++list->size;
+	free(elem);
 }

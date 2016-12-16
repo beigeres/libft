@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_insert.c                                   :+:      :+:    :+:   */
+/*   ft_list_capacity.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 15:54:52 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/14 16:22:05 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void			ft_list_insert(t_list *list, t_list_it it, void *val)
+t_size_type		ft_list_size(const t_list *list)
 {
-	t_list_e	*elem;
-	
-	if (list == NULL)
-		return ;
-	if (it == NULL)
-	{
-		ft_list_push_back(list, val);
-		return ;
-	}
-	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
-		return ;
-	it->prev = elem;
-	if (elem->prev != NULL)
-		elem->prev->next = elem;
-	++list->size;
+	return (list->size);
 }

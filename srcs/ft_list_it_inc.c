@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 17:48:46 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 17:57:22 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/15 18:56:32 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void			ft_list_it_inc(t_list_it *it)
 {
 	if (it == NULL)
+		return ;
+	if (*it == NULL)
 		return ;
 	(*it) = (*it)->next;
 }

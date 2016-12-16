@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 16:21:55 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 16:22:02 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/15 19:02:10 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 t_bool			ft_list_empty(const t_list *list)
 {
+	if (list == NULL)
+		return (FALSE);
 	return (list->size == 0);
 }

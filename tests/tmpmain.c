@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_insert.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/02 14:59:56 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/14 18:26:24 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-void			ft_list_insert(t_list *list, t_list_it it, void *val)
+#include "libft.h"
+
+int		main(int argc, char **argv)
 {
-	t_list_e	*elem;
-	
-	if (list == NULL)
-		return ;
-	if (it == NULL)
+	int		i;
+	t_list	*l;
+	t_list_it	it;
+
+	l = ft_list_new();
+	i = 1;
+	while (i < argc)
 	{
-		ft_list_push_back(list, val);
-		return ;
+		ft_list_push_back(l, argv[i]);
+		i++;
 	}
-	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
-		return ;
-	it->prev = elem;
-	if (elem->prev != NULL)
-		elem->prev->next = elem;
-	++list->size;
+	it = ft_list_begin(l);
+	while (it != ft_list_end(l))
+	{
+		printf("%s\n", (char *)ft_list_it_get(it));
+		ft_list_it_inc(&it);
+	}
+	return (0);
 }

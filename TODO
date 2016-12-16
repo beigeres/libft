@@ -19,6 +19,10 @@ vsprintf
 
 ordre des flags quelconque
 
+CHOISIR ENTRE
+-- Implementation C++ avec des pointeurs de fonction constructeur et destructeur en param
+-- Implementation avec des pointeurs
+
 list:
 
 ft_list_insert doesnt work when it is on the last

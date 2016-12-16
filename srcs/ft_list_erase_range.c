@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_insert.c                                   :+:      :+:    :+:   */
+/*   ft_list_erase_range.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/15 18:05:35 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/15 18:41:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void			ft_list_insert(t_list *list, t_list_it it, void *val)
+void			ft_list_erase_range(t_list *list, t_list_it first, t_list_it last)
 {
-	t_list_e	*elem;
-	
 	if (list == NULL)
 		return ;
-	if (it == NULL)
-	{
-		ft_list_push_back(list, val);
-		return ;
-	}
-	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
-		return ;
-	it->prev = elem;
-	if (elem->prev != NULL)
-		elem->prev->next = elem;
-	++list->size;
+	while (first != last)
+		first = ft_list_erase(list, first);
 }
