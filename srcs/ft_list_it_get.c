@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 18:00:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 18:00:56 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/15 19:04:53 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void			*ft_list_it_get(t_list_it it)
 {
+	if (it == NULL)
+		return (NULL);
 	return (it->val);
 }

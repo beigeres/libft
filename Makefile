@@ -35,7 +35,7 @@ SRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_base.c get_next_line.c \
 		  ft_list_new.c ft_list_delete.c \
 		  ft_list_begin.c ft_list_end.c \
-		  ft_list_it_inc.c ft_list_it_dec.c \
+		  ft_list_it_inc.c ft_list_it_dec.c ft_list_it_get.c \
 		  ft_list_push_back.c ft_list_pop_back.c \
 		  ft_list_empty.c ft_list_push_front.c \
 		  ft_list_it_advance.c ft_list_it_end.c \
