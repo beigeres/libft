@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pri_format_units.c                              :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 19:00:41 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 20:08:30 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/03 15:39:03 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/01 18:05:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_memory.h"
 
-t_bool		ft_pri_format_unit(const char *fmt,
-		va_list ap, unsigned int *i, t_pri_opts *opts)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (ft_pri_format_spec(fmt[*i], opts, ap))
+	size_t			i;
+	unsigned char	*c_dest;
+	unsigned char	*c_src;
+
+	c_dest = (unsigned char *)dest;
+	c_src = (unsigned char *)src;
+	if (dest > src)
 	{
-		++(*i);
-		return (TRUE);
+		i = 1;
+		while (i <= n)
+		{
+			c_dest[n - i] = c_src[n - i];
+			i++;
+		}
 	}
-	if (!ft_pri_format_flags(fmt[*i], opts) &&
-			!ft_pri_format_length(fmt[*i], opts))
+	else
 	{
-		opts->spec = PRI_CHAR;
-		opts->elem.v_char = fmt[*i];
-		++(*i);
-		return (TRUE);
+		i = 0;
+		while (i < n)
+		{
+			c_dest[i] = c_src[i];
+			i++;
+		}
 	}
-	return (FALSE);
+	return (dest);
 }

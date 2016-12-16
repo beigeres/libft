@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pri_valid_format.c                              :+:      :+:    :+:   */
+/*   ft_list_e_new.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 11:14:11 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:26:56 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 16:08:28 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/14 16:09:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_list.h"
 
-t_bool	ft_pri_valid_format(t_pri_fmt fmt)
+t_list_e	*ft_list_e_new(void *val, t_list_e *prev, t_list_e *next)
 {
-	(void)fmt;
-	return (TRUE);
+	t_list_e	*elem;
+
+	if ((elem = malloc(sizeof(*elem))) == NULL)
+		return (NULL);
+	elem->val = val;
+	elem->prev = prev;
+	elem->next = next;
+	return (elem);
 }

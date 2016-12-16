@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pri_size_width.c                                :+:      :+:    :+:   */
+/*   ft_list_insert.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 18:02:23 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:10:17 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_list.h"
 
-unsigned int	ft_pri_size_width(t_pri_opts *opts)
+void			ft_list_insert(t_list *list, t_list_it it, void *val)
 {
-	if (opts->width_char == '0' && !opts->left_justify &&
-			opts->width > opts->little_size && ft_pri_is_number(opts))
+	t_list_e	*elem;
+	
+	if (list == NULL)
+		return ;
+	if (it == NULL)
 	{
-		opts->precision += opts->width - opts->little_size;
-		opts->little_size += opts->width - opts->little_size;
+		ft_list_push_back(list, val);
+		return ;
 	}
-	if (opts->spec == PRI_FMT)
-		return (opts->little_size);
-	return (ft_umax(opts->little_size, opts->width));
+	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
+		return ;
+	it->prev = elem;
+	if (elem->prev != NULL)
+		elem->prev->next = elem;
+	++list->size;
 }

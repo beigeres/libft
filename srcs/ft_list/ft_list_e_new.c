@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pri_print_fmt.c                                 :+:      :+:    :+:   */
+/*   ft_list_e_new.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 11:53:34 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:55:38 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/14 16:08:28 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/14 16:09:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_list.h"
 
-void	ft_pri_print_fmt(char **str, const char *fmt, int i)
+t_list_e	*ft_list_e_new(void *val, t_list_e *prev, t_list_e *next)
 {
-	while (fmt[i] != '\0' && fmt[i] != '%')
-	{
-		**str = fmt[i];
-		i++;
-		(*str)++;
-	}
+	t_list_e	*elem;
+
+	if ((elem = malloc(sizeof(*elem))) == NULL)
+		return (NULL);
+	elem->val = val;
+	elem->prev = prev;
+	elem->next = next;
+	return (elem);
 }

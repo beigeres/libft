@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 16:19:45 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/16 19:27:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int				ft_isblank(int c);
 int				ft_isspace(int c);
-
-void			*ft_memdup(const void *ptr, size_t size);
 
 void			*ft_lstfold(t_list *lst, void *(*f)(void *, void *));
 
