@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/18 16:57:32 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/18 17:02:20 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,7 @@ INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_wchar.h get_next_line.h ft_list.h ft_print.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
-GIT			= Makefile README.md auteur
+GIT			= Makefile README.md auteur .gitignore
 
 .PHONY: fclean all re git no printf check clean
 
