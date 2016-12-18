@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 16:18:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 19:01:52 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 16:15:01 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,3 @@ void			ft_list_delete(t_list *list)
 	ft_list_clear(list);
 	free(list);
 }
-

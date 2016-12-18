@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 17:34:13 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 16:15:14 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void			ft_list_insert(t_list *list, t_list_it it, void *val)
 {
 	t_list_e	*elem;
-	
+
 	if (list == NULL)
 		return ;
 	if (it == NULL)

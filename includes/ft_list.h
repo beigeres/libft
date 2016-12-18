@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                         :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 14:05:25 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/16 17:46:04 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 16:16:41 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include "ft_bool.h"
-
 
 typedef unsigned int	t_size_type;
 typedef unsigned int	t_distance;
@@ -88,7 +87,8 @@ void			ft_list_insert(t_list *list, t_list_it it, void *val);
 void			ft_list_pop_back(t_list *list);
 void			ft_list_pop_front(t_list *list);
 t_list_it		ft_list_erase(t_list *list, t_list_it it);
-void			ft_list_erase_range(t_list *list, t_list_it first, t_list_it last);
+void			ft_list_erase_range(t_list *list,
+		t_list_it first, t_list_it last);
 void			ft_list_clear(t_list *list);
 
 /*
