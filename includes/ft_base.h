@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 15:03:16 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/05 17:59:05 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 16:34:43 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdint.h>
 
 # include "ft_string.h"
+# include "ft_print.h"
 
 typedef struct	s_base
 {

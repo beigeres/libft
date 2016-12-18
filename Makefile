@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/18 16:04:43 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/18 16:45:59 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,8 +105,9 @@ PRINTSRC	= $(PRINTSRCNAM:%=$(PRINTDIR)/%)
 PRINTOBJ	= $(PRINTSRC:%.c=%.o)
 
 
-SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GNLSRC) $(CHARTSRC) \
-			  $(HLSTSRC) $(SLSTSRC) $(MATHSRC) $(PRINTSRC)
+SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GNLSRC) $(BASSRC) \
+			  $(CHARTSRC) $(HLSTSRC) $(SLSTSRC) $(MATHSRC) $(WCHARSRC) \
+			  $(PRINTSRC)
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
@@ -118,7 +119,7 @@ INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_wchar.h get_next_line.h ft_list.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
-GIT			= Makefile libft.xml libft.png TODO auteur
+GIT			= Makefile README.md auteur
 
 .PHONY: fclean all re git no printf check clean
 
@@ -139,7 +140,7 @@ $(STROBJ): $(INCDIR)/ft_string.h $(INCDIR)/ft_memory.h $(INCDIR)/ft_bool.h \
 
 $(GNLOBJ): $(INCDIR)/get_next_line.h
 
-$(BASOBJ): $(INCDIR)/ft_base.h $(INCDIR)/ft_string.h
+$(BASOBJ): $(INCDIR)/ft_base.h $(INCDIR)/ft_string.h $(INCDIR)/ft_print.h
 
 $(CHARTOBJ): $(INCDIR)/ft_char_tools.h
 
@@ -148,6 +149,8 @@ $(HLSTOBJ): $(INCDIR)/ft_hlist.h $(INCDIR)/ft_slist.h
 $(SLSTOBJ): $(INCDIR)/ft_slist.h $(INCDIR)/ft_bool.h
 
 $(MATHOBJ): $(INCDIR)/ft_math.h
+
+$(WCHAROBJ): $(INCDIR)/ft_wchar.h
 
 $(PRINTOBJ): $(INCDIR)/ft_print.h $(INCDIR)/ft_string.h
 

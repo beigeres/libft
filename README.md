@@ -1,4 +1,4 @@
-#libft, my basic toolbox at school 43
+#libft, my basic toolbox at school 42
 
 ##printf bonuses
 ###coloration
