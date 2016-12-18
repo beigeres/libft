@@ -6,28 +6,28 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/18 17:02:20 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/18 17:56:14 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
+NAME		=	libft.a
 
-SRCDIR		= srcs
-INCDIR		= includes
+SRCDIR		=	srcs
+INCDIR		=	includes
 
-LSTDIR		= $(SRCDIR)/ft_list
-LSTSRCNAM	= ft_list_new.c ft_list_delete.c \
-			  ft_list_begin.c ft_list_end.c \
-			  ft_list_it_inc.c ft_list_it_dec.c ft_list_it_get.c \
-			  ft_list_push_back.c ft_list_pop_back.c \
-			  ft_list_empty.c ft_list_push_front.c \
-			  ft_list_it_advance.c ft_list_it_end.c \
-			  ft_list_it_next.c ft_list_it_next_n.c \
-			  ft_list_front.c ft_list_back.c ft_list_insert.c \
-			  ft_list_erase.c ft_list_erase_range.c ft_list_apply.c ft_list_size.c \
-			  ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c
-LSTSRC		= $(LSTSRCNAM:%=$(LSTDIR)/%)
-LSTOBJ		= $(LSTSRC:%.c=%.o)
+LSTDIR		=	$(SRCDIR)/ft_list
+LSTSRCNAM	=	ft_list_new.c ft_list_delete.c \
+				ft_list_begin.c ft_list_end.c \
+				ft_list_it_inc.c ft_list_it_dec.c ft_list_it_get.c \
+				ft_list_push_back.c ft_list_pop_back.c \
+				ft_list_empty.c ft_list_push_front.c \
+				ft_list_it_advance.c ft_list_it_end.c \
+				ft_list_it_next.c ft_list_it_next_n.c \
+				ft_list_front.c ft_list_back.c ft_list_insert.c \
+				ft_list_erase.c ft_list_erase_range.c ft_list_apply.c ft_list_size.c \
+				ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c
+LSTSRC		=	$(LSTSRCNAM:%=$(LSTDIR)/%)
+LSTOBJ		=	$(LSTSRC:%.c=%.o)
 
 PRIDIR		= $(SRCDIR)/ft_printf
 PRISRCNAM	= ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c \
@@ -63,6 +63,11 @@ GNLDIR		= $(SRCDIR)/get_next_line
 GNLSRCNAM	= get_next_line.c
 GNLSRC		= $(GNLSRCNAM:%=$(GNLDIR)/%)
 GNLOBJ		= $(GNLSRC:%.c=%.o)
+
+GSDIR		= $(SRCDIR)/ft_get_section
+GSSRCNAM	= ft_get_section.c
+GSSRC		= $(GSSRCNAM:%=$(GSDIR)/%)
+GSOBJ		= $(GSSRC:%.c=%.o)
 
 BASDIR		= $(SRCDIR)/ft_base
 BASSRCNAM	= ft_putnbr_fd_base.c ft_itoa_base.c \
