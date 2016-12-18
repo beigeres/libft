@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sputnwstr.c                                     :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/13 19:54:26 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:19:10 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/04 16:08:27 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 14:54:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
+#include "ft_char_tools.h"
 
-size_t	ft_sputnwstr(char *str, const wchar_t *src, size_t len)
+int	ft_isspace(int c)
 {
-	int		i;
-	size_t	n;
-
-	i = 0;
-	n = 0;
-	while (n < len)
-	{
-		str += ft_sputwchar(str, src[i]);
-		n += ft_pri_size_wchar(src[i]);
-		i++;
-	}
-	return (i);
+	return (c == '\t' || c == '\n' || c == '\v' ||
+			c == '\f' || c == '\r' || c == ' ');
 }

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 15:30:48 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:01:58 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 15:27:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	ft_pri_print_wstr(char *str, t_pri_opts *opts)
 	if (opts->elem.v_wstr == NULL)
 		ft_strcpy(str, "(null)");
 	else
-		ft_sputnwstr(str, opts->elem.v_wstr, opts->little_size);
+		ft_pri_sputnwstr(str, opts->elem.v_wstr, opts->little_size);
 }

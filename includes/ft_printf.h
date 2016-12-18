@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:54:54 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 15:27:24 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,6 +230,10 @@ t_pri_opts		*ft_pri_format(const char *fmt, va_list ap, unsigned int *i);
 t_pri_opts		*ft_pri_opts_new(void);
 void			ft_pri_opts_delete(t_pri_opts *opts);
 void			ft_pri_set_opts_default(t_pri_opts *opt);
+
+int				ft_pri_size_wchar(wchar_t wc);
+size_t			ft_pri_sputwstr(char *str, const wchar_t *src);
+size_t			ft_pri_sputnwstr(char *str, const wchar_t *src, size_t len);
 
 void			ft_pri_fmt_unsigned(t_pri_opts *opts, va_list ap);
 

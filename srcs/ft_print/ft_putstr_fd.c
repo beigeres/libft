@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sputll_dig.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 11:24:53 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 14:21:45 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 17:41:19 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:53:03 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_print.h"
 
-void	ft_sputll_dig(long long int n, t_base *base, char *str,
-		unsigned int digits)
+void	ft_putstr_fd(const char *s, int fd)
 {
-	if (n >= 0)
-	{
-		ft_sputull_dig((unsigned long long int)n, base, str, digits);
+	if (s == NULL)
 		return ;
+	while (*s != '\0')
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	str[0] = '-';
-	ft_sputull_dig(-(unsigned long long int)n, base, str + 1, digits - 1);
 }

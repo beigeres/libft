@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_wchar.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/13 20:03:36 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:19:18 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 19:18:03 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:52:24 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
+#include "ft_print.h"
 
-int	ft_pri_size_wchar(wchar_t wc)
+void	ft_putnbr(int n)
 {
-	if (wc < 0 || (wc >= 55296 && wc < 57344) ||
-			(wc >= 1114112))
-		return (-1);
-	return (ft_wchar_dig(wc));
+	ft_putnbr_fd(n, 1);
 }

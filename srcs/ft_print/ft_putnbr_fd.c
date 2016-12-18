@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ll_digits_base.c                                :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 17:59:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/25 15:54:56 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 20:18:45 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:53:56 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_print.h"
 
-unsigned int	ft_ll_digits_base(long long int n, unsigned int b)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return ((n < 0) ? 1 + ft_uintmax_digits_base((uintmax_t)-n, b) :
-			ft_uintmax_digits_base((uintmax_t)n, b));
+	t_base	base;
+
+	base.size = 10;
+	base.str = "0123456789";
+	ft_putnbr_fd_base(n, fd, &base);
 }

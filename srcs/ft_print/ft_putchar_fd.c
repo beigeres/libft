@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 14:02:09 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 14:03:21 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 17:39:29 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:52:42 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_print.h"
 
-void	ft_lstadd(t_list **alst, t_list *elem)
+void	ft_putchar_fd(char c, int fd)
 {
-	elem->next = *alst;
-	*alst = elem;
+	write(fd, &c, 1);
 }

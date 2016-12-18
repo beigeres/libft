@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_pri_sputwstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 17:17:57 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/08 15:38:48 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/18 15:21:59 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:22:01 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-/*
-** Anciennement une boucle de ft_putchar
-*/
-
-void	ft_putstr(const char *str)
+size_t	ft_pri_sputwstr(char *str, const wchar_t *src)
 {
-	if (str == NULL)
-		return ;
-	write(1, str, ft_strlen(str));
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		str += ft_sputwchar(str, src[i]);
+		i++;
+	}
+	return (i);
 }

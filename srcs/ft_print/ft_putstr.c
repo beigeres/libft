@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 14:09:21 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 14:23:15 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 17:17:57 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:54:04 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_print.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+/*
+** Anciennement une boucle de ft_putchar
+*/
+
+void	ft_putstr(const char *str)
 {
-	t_list *ret;
-
-	if (lst == NULL)
-		return (NULL);
-	ret = ft_lstmap(lst->next, f);
-	ft_lstadd(&ret, (*f)(lst));
-	return (ret);
+	if (str == NULL)
+		return ;
+	write(1, str, ft_strlen(str));
 }

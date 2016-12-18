@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ull_digits_base.c                               :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 14:29:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/03 17:23:33 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/04 15:14:18 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:36:49 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_base.h"
+#include "ft_string.h"
 
-unsigned int	ft_uintmax_digits_base(uintmax_t n, unsigned int base)
+int	ft_atoi(const char *str)
 {
-	unsigned int	a;
+	long int	n;
+	int			neg;
 
-	a = 1;
-	while (n >= (unsigned long long int)base)
+	while (ft_isspace(*str))
+		str++;
+	neg = 1;
+	if (*str == '-')
 	{
-		a++;
-		n /= base;
+		neg = -1;
+		str++;
 	}
-	return (a);
+	else if (*str == '+')
+		str++;
+	n = 0;
+	while (*str >= '0' && *str <= '9')
+	{
+		n = n * 10 + *str - '0';
+		str++;
+	}
+	return ((int)neg * n);
 }

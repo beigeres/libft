@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 16:43:01 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 16:38:02 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 14:34:33 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@
 
 # include "ft_memory.h"
 # include "ft_slist.h"
-# include "ft_alloc.h"
 
 typedef t_bool	(*t_comp_func)(void *, void *);
 

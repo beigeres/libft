@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nrealloc.c                                      :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:13:57 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 16:34:42 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 17:37:54 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:52:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_alloc.h"
+#include "ft_print.h"
 
-void	*ft_nrealloc(void *ptr, size_t old_size, size_t new_size)
+void	ft_putendl(const char *s)
 {
-	void	*ret;
-
-	if ((ret = malloc(new_size)) == NULL)
-		return (NULL);
-	if (ptr != NULL)
-	{
-		ft_memcpy(ret, ptr, old_size);
-		free(ptr);
-	}
-	return (ret);
+	if (s == NULL)
+		return ;
+	ft_putstr(s);
+	ft_putchar('\n');
 }

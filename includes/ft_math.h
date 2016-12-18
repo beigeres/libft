@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 15:37:05 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/04 13:56:47 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 16:03:46 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ unsigned int			ft_umin(unsigned int a, unsigned int b);
 int						ft_max(int a, int b);
 unsigned int			ft_umax(unsigned int a, unsigned int b);
 intmax_t				ft_intmaxmax(intmax_t a, intmax_t b);
+
+int						ft_min_int(int a, int b);
 
 unsigned long long int	ft_llabs(long long int a);
 uintmax_t				ft_intmaxabs(intmax_t n);

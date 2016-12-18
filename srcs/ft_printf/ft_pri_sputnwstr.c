@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digits_base.c                                   :+:      :+:    :+:   */
+/*   ft_pri_sputnwstr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 18:31:11 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/24 11:44:06 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/18 15:27:10 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:27:24 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-unsigned int	ft_digits_base(int n, unsigned int b)
+size_t	ft_pri_sputnwstr(char *str, const wchar_t *src, size_t len)
 {
-	return (ft_ll_digits_base((long long int)n, b));
+	int		i;
+	size_t	n;
+
+	i = 0;
+	n = 0;
+	while (n < len)
+	{
+		str += ft_sputwchar(str, src[i]);
+		n += ft_pri_size_wchar(src[i]);
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 18:02:35 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/16 19:26:57 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 14:31:09 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void	*ft_memdup(const void *ptr, size_t size);
+void	*ft_nrealloc(void *ptr, size_t old_size, size_t new_size);
 
 #endif

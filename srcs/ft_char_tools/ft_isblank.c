@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 17:44:24 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/06 21:10:06 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/04 15:37:32 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 14:54:37 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_char_tools.h"
 
-void	ft_putendl_fd(const char *str, int fd)
+int	ft_isblank(int c)
 {
-	if (str == NULL)
-		return ;
-	ft_putstr_fd(str, fd);
-	ft_putchar_fd('\n', fd);
+	return (c == ' ' || c == '\t');
 }

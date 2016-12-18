@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 19:18:03 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/05 19:18:29 by etrobert         ###   ########.fr       */
+/*   Created: 2016/11/05 19:49:01 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:35:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
-void	ft_putnbr(int n)
+char	*ft_itoa(int n)
 {
-	ft_putnbr_fd(n, 1);
+	return (ft_itoa_base(n, 10));
 }

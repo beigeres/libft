@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar_bits.c                                    :+:      :+:    :+:   */
+/*   ft_pri_size_wchar.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/04 18:51:43 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/05 17:10:15 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/18 15:18:49 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/18 15:18:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_wchar.h"
+#include "ft_printf.h"
 
-unsigned int	ft_wchar_bits(wchar_t c)
+int	ft_pri_size_wchar(wchar_t wc)
 {
-	unsigned int	a;
-
-	a = 1;
-	while (c >= 2)
-	{
-		a++;
-		c /= 2;
-	}
-	return (a);
+	if (wc < 0 || (wc >= 55296 && wc < 57344) ||
+			(wc >= 1114112))
+		return (-1);
+	return (ft_wchar_dig(wc));
 }
