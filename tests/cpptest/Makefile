@@ -4,18 +4,16 @@ SRCDIR		= .
 OBJDIR		= objs
 INCDIR		= includes
 
-#SRCNAM		= list_cpp_begin.c
-#SRCNAM		= vector_test.c
-SRCNAM		= vector_new_test.c
+SRCNAM		= main.cpp
 INCNAM		=
 
-CC			= clang
-CFLAGS		= -Wall -Wextra -I$(INCDIR) -I $(LIBFTDIR)/includes
+CC			= g++
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -I $(LIBFTDIR)/includes
 LDFLAGS		= -L $(LIBFTDIR) -l$(LIBFTNAM:lib%.a=%)
 
 GIT			= README.md
 
-LIBFTDIR	= ../
+LIBFTDIR	= ~/work/libft
 LIBFTNAM	= libft.a
 LIBFT		= $(LIBFTNAM:%=$(LIBFTDIR)/%)
 

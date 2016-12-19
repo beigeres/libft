@@ -30,3 +30,5 @@ strlcat gerer quon accede pas a la derniere case du buffer s1 quand i == size
 CHOISIR ENTRE
 -- Implementation C++ avec des pointeurs de fonction constructeur et destructeur en param
 -- Implementation avec des pointeurs
+
+###Gerer les exceptions

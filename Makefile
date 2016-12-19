@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/18 18:20:24 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/19 19:54:48 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,10 +109,20 @@ PRINTSRCNAM	= ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 PRINTSRC	= $(PRINTSRCNAM:%=$(PRINTDIR)/%)
 PRINTOBJ	= $(PRINTSRC:%.c=%.o)
 
+VECDIR		= $(SRCDIR)/ft_vector
+VECSRCNAM	= ft_vector_new.c ft_vector_new_size.c ft_vector_delete.c \
+			  ft_vector_init.c ft_vector_init_size.c \
+			  ft_vector_at.c ft_vector_front.c ft_vector_back.c \
+			  ft_vector_push_back.c  ft_vector_pop_back.c ft_vector_swap.c \
+			  ft_vector_clear.c \
+			  ft_vector_capacity.c ft_vector_reserve.c ft_vector_empty.c \
+			  ft_vector_init_min_capacity.c
+VECSRC		= $(VECSRCNAM:%=$(VECDIR)/%)
+VECOBJ		= $(VECSRC:%.c=%.o)
 
 SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 			  $(BASSRC) $(CHARTSRC) $(HLSTSRC) $(SLSTSRC) $(MATHSRC) \
-			  $(WCHARSRC) $(PRINTSRC)
+			  $(WCHARSRC) $(PRINTSRC) $(VECSRC)
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
@@ -160,6 +170,8 @@ $(MATHOBJ): $(INCDIR)/ft_math.h
 $(WCHAROBJ): $(INCDIR)/ft_wchar.h
 
 $(PRINTOBJ): $(INCDIR)/ft_print.h $(INCDIR)/ft_string.h
+
+$(VECOBJ): $(INCDIR)/ft_vector.h $(INCDIR)/ft_memory.h
 
 %.o: %.c
 	@printf "Compiling\t%s\n"	$@
