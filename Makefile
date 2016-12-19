@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/19 19:54:48 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/19 21:08:08 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -131,7 +131,8 @@ LDFLAGS		=
 
 INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
-			  ft_wchar.h ft_get_section.h get_next_line.h ft_list.h ft_print.h
+			  ft_wchar.h ft_get_section.h get_next_line.h ft_list.h ft_print.h \
+			  ft_vector.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
 GIT			= Makefile README.md auteur .gitignore

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 18:54:06 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/19 19:24:20 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/19 21:07:22 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	ft_vector_init_get_capacity(size_t min_capacity)
 	return (capacity);
 }
 
-void		ft_vector_init_min_capacity(t_vector *vec,
+void			ft_vector_init_min_capacity(t_vector *vec,
 		size_t elem_size, size_t min_capacity)
 {
 	size_t	capacity;
