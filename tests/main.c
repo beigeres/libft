@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:59:56 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 18:04:46 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/18 16:39:58 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int		main(int argc, char **argv)
 {
 	t_list	*list;
 	int		i;
+
+	ft_printf("%b\n", 42);
 
 	list = ft_list_new();
 	i = 1;

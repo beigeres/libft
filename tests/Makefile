@@ -4,7 +4,7 @@ SRCDIR		= .
 OBJDIR		= objs
 INCDIR		= includes
 
-SRCNAM		= cpp_resize.c
+SRCNAM		= test_get_section.c
 INCNAM		=
 
 CC			= clang
