@@ -11,6 +11,9 @@
 # Object files
 *.o
 
+#lib files
+*.a
+
 #tmp files
 *.tmp
 
