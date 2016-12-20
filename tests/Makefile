@@ -6,10 +6,11 @@ INCDIR		= includes
 
 #SRCNAM		= list_cpp_begin.c
 #SRCNAM		= vector_test.c
-SRCNAM		= vector_new_test.c
+#SRCNAM		= vector_new_test.c
+SRCNAM		= exception_test.c
 INCNAM		=
 
-CC			= clang
+CC			= gcc
 CFLAGS		= -Wall -Wextra -I$(INCDIR) -I $(LIBFTDIR)/includes
 LDFLAGS		= -L $(LIBFTDIR) -l$(LIBFTNAM:lib%.a=%)
 

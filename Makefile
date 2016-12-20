@@ -120,9 +120,14 @@ VECSRCNAM	= ft_vector_new.c ft_vector_new_size.c ft_vector_delete.c \
 VECSRC		= $(VECSRCNAM:%=$(VECDIR)/%)
 VECOBJ		= $(VECSRC:%.c=%.o)
 
+EXCDIR		= $(SRCDIR)/ft_exception
+EXCSRCNAM	= ft_exception.c
+EXCSRC		= $(EXCSRCNAM:%=$(EXCDIR)/%)
+EXCOBJ		= $(EXCSRC:%.c=%.o)
+
 SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 			  $(BASSRC) $(CHARTSRC) $(HLSTSRC) $(SLSTSRC) $(MATHSRC) \
-			  $(WCHARSRC) $(PRINTSRC) $(VECSRC)
+			  $(WCHARSRC) $(PRINTSRC) $(VECSRC) $(EXCSRC)
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
@@ -132,7 +137,7 @@ LDFLAGS		=
 INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
 			  ft_wchar.h ft_get_section.h get_next_line.h ft_list.h ft_print.h \
-			  ft_vector.h
+			  ft_vector.h ft_exception.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
 GIT			= Makefile README.md auteur .gitignore
