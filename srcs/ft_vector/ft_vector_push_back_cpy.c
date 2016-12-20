@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_empty.c                                  :+:      :+:    :+:   */
+/*   ft_vector_push_back_cpy.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 19:53:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/20 20:24:19 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/20 20:33:36 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/20 20:35:06 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_vector.h"
 
-bool		ft_vector_empty(const t_vector *vec)
+void			ft_vector_push_back_cpy(t_vector *vec, void *ref)
 {
-	return (vec->size == 0);
+	ft_vector_push_back(vec);
+	ft_memcpy(ft_vector_back(vec), ref, vec->elem_size);
 }

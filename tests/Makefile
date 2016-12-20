@@ -6,12 +6,13 @@ INCDIR		= includes
 
 #SRCNAM		= list_cpp_begin.c
 #SRCNAM		= vector_test.c
-SRCNAM		= vector_new_test.c
+#SRCNAM		= vector_new_test.c
+SRCNAM		= test.c
 INCNAM		=
 
 CC			= clang
-CFLAGS		= -Wall -Wextra -I$(INCDIR) -I $(LIBFTDIR)/includes
-LDFLAGS		= -L $(LIBFTDIR) -l$(LIBFTNAM:lib%.a=%)
+CFLAGS		= -Wall -Wextra -I$(INCDIR) -I $(LIBFTDIR)/includes -g
+LDFLAGS		= -L $(LIBFTDIR) -l$(LIBFTNAM:lib%.a=%) -g
 
 GIT			= README.md
 

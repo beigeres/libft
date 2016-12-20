@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 17:43:10 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/19 17:47:03 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/20 20:23:28 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_vector.h"
 
-void		*ft_vector_front(t_vector *vec)
+void		*ft_vector_front(const t_vector *vec)
 {
 	return (vec->tab);
 }

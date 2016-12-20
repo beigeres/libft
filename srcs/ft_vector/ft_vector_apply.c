@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_reserve.c                                :+:      :+:    :+:   */
+/*   ft_vector_apply.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 19:38:47 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/20 20:26:57 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/20 19:46:04 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/20 20:25:00 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_vector.h"
 
-void		ft_vector_reserve(t_vector *vec, size_t size)
+void			ft_vector_apply(t_vector *vec, void (*f)(void *))
 {
-	size_t	new_capacity;
+	size_t		i;
 
-	if (vec == NULL)
-		return ;
-	if (size <= vec->capacity)
-		return ;
-	if (vec->capacity == 0)
-		new_capacity = 1;
-	else
-		new_capacity = vec->capacity;
-	while (new_capacity < size)
-		new_capacity *= 2;
-	if ((vec->tab = ft_nrealloc(vec->tab, vec->capacity * vec->elem_size,
-					new_capacity * vec->elem_size)) == NULL)
-		return ;
-	vec->capacity = new_capacity;
+	i = 0;
+	while (i < vec->size)
+	{
+		(*f)(vec->tab + i);
+		++i;
+	}
 }

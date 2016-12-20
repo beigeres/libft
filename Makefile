@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/19 21:12:34 by etrobert         ###   ########.fr        #
+#    Updated: 2016/12/20 20:41:13 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,9 +113,11 @@ VECDIR		= $(SRCDIR)/ft_vector
 VECSRCNAM	= ft_vector_new.c ft_vector_new_size.c ft_vector_delete.c \
 			  ft_vector_init.c ft_vector_init_size.c \
 			  ft_vector_at.c ft_vector_front.c ft_vector_back.c \
-			  ft_vector_push_back.c  ft_vector_pop_back.c ft_vector_swap.c \
+			  ft_vector_push_back.c ft_vector_push_back_cpy.c \
+			  ft_vector_pop_back.c ft_vector_swap.c \
 			  ft_vector_clear.c \
 			  ft_vector_capacity.c ft_vector_reserve.c ft_vector_empty.c \
+			  ft_vector_size.c ft_vector_apply.c \
 			  ft_vector_init_min_capacity.c
 VECSRC		= $(VECSRCNAM:%=$(VECDIR)/%)
 VECOBJ		= $(VECSRC:%.c=%.o)
@@ -126,8 +128,8 @@ SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
-LDFLAGS		=
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -g
+LDFLAGS		= -g
 
 INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
