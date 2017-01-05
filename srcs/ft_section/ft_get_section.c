@@ -6,11 +6,11 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:13:08 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 18:15:35 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/29 16:54:52 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_get_section.h"
+#include "ft_section.h"
 
 /*
 ** n is the number of characters read, c excluded
@@ -36,7 +36,7 @@ int				get_section_buff(t_gs_params *pa)
 	line_size = 0;
 	while ((ptr = ft_memchr(pa->buff->buff, pa->c, pa->buff->size)) == NULL)
 	{
-		if (extract(pa, line_size, pa->buff->size) == -1)
+		if (pa->line != NULL && extract(pa, line_size, pa->buff->size) == -1)
 			return (-1);
 		line_size += pa->buff->size;
 		if ((pa->buff->size = read(pa->fd, pa->buff->buff, BUFF_SIZE)) == -1)
@@ -48,7 +48,7 @@ int				get_section_buff(t_gs_params *pa)
 			return (FT_GS_RET_V);
 		}
 	}
-	if (extract(pa, line_size, ptr - pa->buff->buff) == -1)
+	if (pa->line != NULL && extract(pa, line_size, ptr - pa->buff->buff) == -1)
 		return (-1);
 	line_size += ptr - pa->buff->buff;
 	ft_memmove(pa->buff->buff, ptr + 1,
@@ -68,8 +68,6 @@ int				ft_get_section_pa(t_gs_params *pa)
 	int				fd_cpy;
 	int				n;
 
-	if (pa->line == NULL)
-		return (-1);
 	fd_cpy = pa->fd;
 	if ((pa->buff = (t_gs_buff *)ft_slist_find(buffs, &fd_cpy,
 					(t_comp_func)(&good_fd))) == NULL)
@@ -95,7 +93,8 @@ int				ft_get_section(const int fd, char **line, char c)
 
 	pa.fd = fd;
 	pa.line = line;
-	*(pa.line) = NULL;
+	if (pa.line != NULL)
+		*(pa.line) = NULL;
 	pa.c = c;
 	return (ft_get_section_pa(&pa));
 }

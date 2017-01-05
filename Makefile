@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2016/12/20 20:41:13 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/05 19:57:39 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ LSTSRCNAM	= ft_list_new.c ft_list_delete.c \
 			  ft_list_it_advance.c ft_list_it_end.c \
 			  ft_list_it_next.c ft_list_it_next_n.c \
 			  ft_list_front.c ft_list_back.c ft_list_insert.c \
-			  ft_list_erase.c ft_list_erase_range.c ft_list_apply.c ft_list_size.c \
-			  ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c
+			  ft_list_erase.c ft_list_erase_range.c ft_list_apply.c \
+			  ft_list_size.c ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c
 LSTSRC		= $(LSTSRCNAM:%=$(LSTDIR)/%)
 LSTOBJ		= $(LSTSRC:%.c=%.o)
 
@@ -64,8 +64,8 @@ GNLSRCNAM	= get_next_line.c
 GNLSRC		= $(GNLSRCNAM:%=$(GNLDIR)/%)
 GNLOBJ		= $(GNLSRC:%.c=%.o)
 
-GSDIR		= $(SRCDIR)/ft_get_section
-GSSRCNAM	= ft_get_section.c
+GSDIR		= $(SRCDIR)/ft_section
+GSSRCNAM	= ft_get_section.c ft_skip_section.c
 GSSRC		= $(GSSRCNAM:%=$(GSDIR)/%)
 GSOBJ		= $(GSSRC:%.c=%.o)
 
@@ -128,12 +128,12 @@ SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -g
-LDFLAGS		= -g
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
+LDFLAGS		=
 
 INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
-			  ft_wchar.h ft_get_section.h get_next_line.h ft_list.h ft_print.h \
+			  ft_wchar.h ft_section.h get_next_line.h ft_list.h ft_print.h \
 			  ft_vector.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
@@ -156,7 +156,7 @@ $(PRIOBJ): $(INCDIR)/ft_printf.h $(INCDIR)/ft_hlist.h $(INCDIR)/ft_base.h \
 $(STROBJ): $(INCDIR)/ft_string.h $(INCDIR)/ft_memory.h $(INCDIR)/ft_bool.h \
 	$(INCDIR)/ft_base.h $(INCDIR)/ft_char_tools.h
 
-$(GSOBJ): $(INCDIR)/ft_get_section.h
+$(GSOBJ): $(INCDIR)/ft_section.h
 
 $(GNLOBJ): $(INCDIR)/get_next_line.h
 

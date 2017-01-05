@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:10:59 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/19 21:07:40 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/29 17:02:12 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ typedef struct	s_gs_params
 }				t_gs_params;
 
 int				ft_get_section(const int fd, char **line, char c);
+int				ft_skip_section(const int fd, char c);
 
 #endif

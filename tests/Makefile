@@ -7,7 +7,7 @@ INCDIR		= includes
 #SRCNAM		= list_cpp_begin.c
 #SRCNAM		= vector_test.c
 #SRCNAM		= vector_new_test.c
-SRCNAM		= test.c
+SRCNAM		= test_gnl.c
 INCNAM		=
 
 CC			= clang

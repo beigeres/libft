@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/20 19:32:57 by etrobert         ###   ########.fr       */
+/*   Updated: 2016/12/29 16:57:44 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include "get_next_line.h"
 # include "ft_list.h"
 # include "ft_print.h"
-# include "ft_get_section.h"
+# include "ft_section.h"
 # include "ft_vector.h"
 
 #endif

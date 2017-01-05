@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_skip_section.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 15:14:18 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/29 14:52:50 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/29 17:02:30 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/29 17:03:31 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_section.h"
 
-int	ft_atoi(const char *str)
+int				ft_skip_section(const int fd, char c)
 {
-	long int	n;
-	int			neg;
-
-	while (ft_isspace(*str))
-		str++;
-	neg = 1;
-	if (*str == '-')
-	{
-		neg = -1;
-		str++;
-	}
-	else if (*str == '+')
-		str++;
-	n = 0;
-	while (*str >= '0' && *str <= '9')
-	{
-		n = n * 10 + *str - '0';
-		str++;
-	}
-	return ((int)neg * n);
+	return (ft_get_section(fd, NULL, c));
 }
