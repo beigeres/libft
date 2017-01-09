@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/09 11:27:10 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/09 14:14:48 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCDIR		= srcs
 INCDIR		= includes
 
 LSTDIR		= $(SRCDIR)/ft_list
-LSTSRCNAM	= ft_list_new.c ft_list_delete.c \
+LSTSRCNAM	= ft_list_new.c ft_list_cpy.c ft_list_delete.c \
 			  ft_list_begin.c ft_list_end.c \
 			  ft_list_it_inc.c ft_list_it_dec.c ft_list_it_get.c \
 			  ft_list_push_back.c ft_list_pop_back.c \

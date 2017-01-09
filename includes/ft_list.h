@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 11:27:45 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 14:11:38 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef t_list_e		*t_list_it;
 */
 
 t_list			*ft_list_new(void);
+t_list			*ft_list_cpy(t_list *list);
 void			ft_list_delete(t_list *list);
 
 /*

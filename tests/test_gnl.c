@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   test_gnl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 14:31:36 by etrobert         ###   ########.fr       */
+/*   Created: 2016/12/29 16:41:48 by etrobert          #+#    #+#             */
+/*   Updated: 2016/12/29 16:49:31 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "ft_hlist.h"
-# include "ft_slist.h"
-# include "ft_printf.h"
-# include "ft_base.h"
-# include "ft_math.h"
-# include "ft_string.h"
-# include "ft_char_tools.h"
-# include "ft_wchar.h"
-# include "get_next_line.h"
-# include "ft_list.h"
-# include "ft_print.h"
-# include "ft_section.h"
-# include "ft_vector.h"
+int main(void)
+{
+	int		n;
+	char	*str;
 
-#endif
+	ft_get_section(0, NULL, '\n');
+	while ((n = ft_get_section(0, &str, '\n')) > 0)
+	{
+		ft_printf("%s\n", str);
+	}
+	return (0);
+}
