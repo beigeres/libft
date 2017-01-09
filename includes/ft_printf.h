@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 14:30:07 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 15:27:24 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:33:50 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@
 # include "ft_hlist.h"
 # include "ft_base.h"
 # include "ft_math.h"
-# include "ft_bool.h"
 # include "ft_char_tools.h"
 # include "ft_string.h"
 # include "ft_wchar.h"
@@ -149,15 +148,15 @@ typedef enum	e_pri_length
 
 typedef struct	s_pri_opts
 {
-	t_bool			left_justify;
+	bool			left_justify;
 	t_pri_sign		sign;
-	t_bool			sharp;
+	bool			sharp;
 	char			width_char;
 
 	unsigned int	width;
 
 	unsigned int	precision;
-	t_bool			prec_set;
+	bool			prec_set;
 
 	t_pri_length	length;
 	t_pri_spec		spec;
@@ -193,28 +192,28 @@ void			ft_pri_print_wstr(char *str, t_pri_opts *opts);
 ** ft_pri_format_fct.c
 */
 
-t_bool			ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap);
-t_bool			ft_pri_format_flags(char fmt, t_pri_opts *opts);
-t_bool			ft_pri_format_length(char fmt, t_pri_opts *opts);
+bool			ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap);
+bool			ft_pri_format_flags(char fmt, t_pri_opts *opts);
+bool			ft_pri_format_length(char fmt, t_pri_opts *opts);
 
 /*
 ** ft_pri_format_units.c
 */
 
-t_bool			ft_pri_format_unit(const char *fmt, va_list ap,
+bool			ft_pri_format_unit(const char *fmt, va_list ap,
 		unsigned int *i, t_pri_opts *opts);
 
 /*
 ** ft_pri_is_number.c
 */
 
-t_bool			ft_pri_is_number(const t_pri_opts *opts);
+bool			ft_pri_is_number(const t_pri_opts *opts);
 
 /*
 ** ft_pri_valid_format.cc
 */
 
-t_bool			ft_pri_valid_format(t_pri_fmt fmt);
+bool			ft_pri_valid_format(t_pri_fmt fmt);
 
 /*
 ** ft_pri_print_fmt.c

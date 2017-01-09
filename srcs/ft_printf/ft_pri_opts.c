@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 17:36:51 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:11:16 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:34:15 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void			ft_pri_opts_delete(t_pri_opts *opts)
 
 void			ft_pri_set_opts_default(t_pri_opts *opt)
 {
-	opt->left_justify = FALSE;
+	opt->left_justify = false;
 	opt->sign = PRI_SDEFAULT;
-	opt->sharp = FALSE;
+	opt->sharp = false;
 	opt->width_char = ' ';
 	opt->width = 0;
 	opt->precision = 1;
-	opt->prec_set = FALSE;
+	opt->prec_set = false;
 	opt->length = PRI_DEFAULT;
 	opt->spec = PRI_INT;
 	opt->base = NULL;

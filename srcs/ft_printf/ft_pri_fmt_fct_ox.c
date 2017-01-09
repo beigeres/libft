@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 15:20:01 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/08 15:23:43 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:35:23 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void	ft_pri_fmt_p(t_pri_opts *opts, va_list ap)
 {
 	opts->base = ft_base_new("0123456789abcdef", 16);
 	opts->elem.v_uint = (uintmax_t)va_arg(ap, void *);
-	opts->sharp = TRUE;
+	opts->sharp = true;
 	opts->spec = PRI_POINTER;
 }

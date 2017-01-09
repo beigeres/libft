@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 18:50:13 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/13 20:18:11 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:30:14 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_slist_apply(t_slist *slist, void (*f)(void *))
 	}
 }
 
-int			ft_slist_count_if(t_slist *slist, t_bool (*f)(void *))
+int			ft_slist_count_if(t_slist *slist, bool (*f)(void *))
 {
 	int			n;
 

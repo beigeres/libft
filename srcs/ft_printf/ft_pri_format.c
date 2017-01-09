@@ -6,17 +6,17 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 13:53:01 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 20:30:30 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:39:39 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static t_bool		ft_pri_format_digit(char fmt, t_pri_opts *opts,
+static bool			ft_pri_format_digit(char fmt, t_pri_opts *opts,
 		t_pri_mode *mode)
 {
 	if (!ft_isdigit(fmt))
-		return (FALSE);
+		return (false);
 	if (*mode == PRI_MPREC_STARTING)
 		*mode = PRI_MPREC;
 	if (*mode == PRI_MPREC)
@@ -28,13 +28,13 @@ static t_bool		ft_pri_format_digit(char fmt, t_pri_opts *opts,
 		opts->width = fmt - '0';
 		*mode = PRI_MWIDTH;
 	}
-	return (TRUE);
+	return (true);
 }
 
 static void			ft_pri_format_dot(t_pri_opts *opts, t_pri_mode *mode)
 {
 	*mode = PRI_MPREC_STARTING;
-	opts->prec_set = TRUE;
+	opts->prec_set = true;
 	opts->precision = 0;
 }
 
@@ -47,7 +47,7 @@ static void			ft_pri_format_star(t_pri_opts *opts,
 	{
 		n = va_arg(ap, int);
 		if (n < 0)
-			opts->prec_set = FALSE;
+			opts->prec_set = false;
 		else
 			opts->precision = n;
 	}
@@ -56,7 +56,7 @@ static void			ft_pri_format_star(t_pri_opts *opts,
 		n = va_arg(ap, int);
 		if (n < 0)
 		{
-			opts->left_justify = TRUE;
+			opts->left_justify = true;
 			opts->width = (unsigned int)-n;
 		}
 		else

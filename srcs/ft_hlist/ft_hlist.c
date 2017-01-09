@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 18:17:46 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 17:58:43 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:31:21 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ void	ft_hlist_delete(t_hlist *list)
 	free(list);
 }
 
-t_bool	ft_hlist_push_back(t_hlist *list, void *data)
+bool	ft_hlist_push_back(t_hlist *list, void *data)
 {
 	t_slist	*elem;
 
 	if ((elem = ft_slist_new(data)) == NULL)
-		return (FALSE);
+		return (false);
 	if (list->last == NULL)
 		list->first = elem;
 	else
 		list->last->next = elem;
 	list->last = elem;
-	return (TRUE);
+	return (true);
 }
 
-t_bool	ft_hlist_push_front(t_hlist *list, void *data)
+bool	ft_hlist_push_front(t_hlist *list, void *data)
 {
 	if (!ft_slist_push_front(&(list->first), data))
-		return (FALSE);
+		return (false);
 	if (list->last == NULL)
 		list->last = list->first;
-	return (TRUE);
+	return (true);
 }
 
 void	*ft_hlist_back(t_hlist *list)

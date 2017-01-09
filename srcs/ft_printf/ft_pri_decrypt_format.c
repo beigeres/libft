@@ -6,26 +6,26 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 20:09:36 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/12 20:09:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:36:12 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_bool				ft_pri_decrypt_format_sstuff(t_pri_opts *elem,
+bool				ft_pri_decrypt_format_sstuff(t_pri_opts *elem,
 		unsigned int *n)
 {
 	int	k;
 
 	if ((k = ft_pri_size_little_size(elem)) < 0)
-		return (FALSE);
+		return (false);
 	elem->little_size = k;
 	if (elem->width_char == '0' && elem->prec_set &&
 			ft_pri_is_number(elem))
 		elem->width_char = ' ';
 	elem->size = ft_pri_size_width(elem);
 	*n += elem->size;
-	return (TRUE);
+	return (true);
 }
 
 int					ft_pri_decrypt_format(const char *fmt, va_list ap,

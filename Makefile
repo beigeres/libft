@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/05 19:57:39 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/09 11:27:10 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -131,7 +131,7 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS		=
 
-INCNAM		= libft.h ft_bool.h ft_math.h ft_base.h ft_printf.h \
+INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
 			  ft_wchar.h ft_section.h get_next_line.h ft_list.h ft_print.h \
 			  ft_vector.h
@@ -147,13 +147,13 @@ $(NAME): $(OBJ)
 	@printf "Linking\t\t%s\n"	$@
 	@ar -rcs $@ $^
 
-$(LSTOBJ): $(INCDIR)/ft_list.h $(INCDIR)/ft_bool.h
+$(LSTOBJ): $(INCDIR)/ft_list.h
 
 $(PRIOBJ): $(INCDIR)/ft_printf.h $(INCDIR)/ft_hlist.h $(INCDIR)/ft_base.h \
 	$(INCDIR)/ft_math.h $(INCDIR)/ft_char_tools.h \
-	$(INCDIR)/ft_string.h $(INCDIR)/ft_wchar.h $(INCDIR)/ft_bool.h
+	$(INCDIR)/ft_string.h $(INCDIR)/ft_wchar.h
 
-$(STROBJ): $(INCDIR)/ft_string.h $(INCDIR)/ft_memory.h $(INCDIR)/ft_bool.h \
+$(STROBJ): $(INCDIR)/ft_string.h $(INCDIR)/ft_memory.h \
 	$(INCDIR)/ft_base.h $(INCDIR)/ft_char_tools.h
 
 $(GSOBJ): $(INCDIR)/ft_section.h
@@ -166,7 +166,7 @@ $(CHARTOBJ): $(INCDIR)/ft_char_tools.h
 
 $(HLSTOBJ): $(INCDIR)/ft_hlist.h $(INCDIR)/ft_slist.h
 
-$(SLSTOBJ): $(INCDIR)/ft_slist.h $(INCDIR)/ft_bool.h
+$(SLSTOBJ): $(INCDIR)/ft_slist.h 
 
 $(MATHOBJ): $(INCDIR)/ft_math.h
 

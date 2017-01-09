@@ -6,16 +6,16 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:54:17 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 11:12:37 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:40:15 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_bool				ft_pri_format_flags(char fmt, t_pri_opts *opts)
+bool				ft_pri_format_flags(char fmt, t_pri_opts *opts)
 {
 	if (fmt == '-')
-		opts->left_justify = TRUE;
+		opts->left_justify = true;
 	else if (fmt == '+')
 		opts->sign = PRI_SSIGN_ON;
 	else if (fmt == ' ')
@@ -24,15 +24,15 @@ t_bool				ft_pri_format_flags(char fmt, t_pri_opts *opts)
 			opts->sign = PRI_SSPACE;
 	}
 	else if (fmt == '#')
-		opts->sharp = TRUE;
+		opts->sharp = true;
 	else if (fmt == '0')
 		opts->width_char = '0';
 	else
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }
 
-static t_bool		ft_pri_format_numbers(char fmt, t_pri_opts *opts,
+static bool			ft_pri_format_numbers(char fmt, t_pri_opts *opts,
 		va_list ap)
 {
 	if (fmt == 'd' || fmt == 'i')
@@ -54,11 +54,11 @@ static t_bool		ft_pri_format_numbers(char fmt, t_pri_opts *opts,
 	else if (fmt == 'X')
 		ft_pri_fmt_x_maj(opts, ap);
 	else
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }
 
-t_bool				ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
+bool				ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
 {
 	if (fmt == 'c')
 		ft_pri_fmt_c(opts, ap);
@@ -76,7 +76,7 @@ t_bool				ft_pri_format_spec(char fmt, t_pri_opts *opts, va_list ap)
 		ft_pri_fmt_fmt(opts, ap);
 	else
 		return (ft_pri_format_numbers(fmt, opts, ap));
-	return (TRUE);
+	return (true);
 }
 
 static t_pri_length	ft_pri_length_max(t_pri_length l1, t_pri_length l2)
@@ -84,7 +84,7 @@ static t_pri_length	ft_pri_length_max(t_pri_length l1, t_pri_length l2)
 	return ((l1 > l2) ? l1 : l2);
 }
 
-t_bool				ft_pri_format_length(char fmt, t_pri_opts *opts)
+bool				ft_pri_format_length(char fmt, t_pri_opts *opts)
 {
 	if (fmt == 'h')
 	{
@@ -107,6 +107,6 @@ t_bool				ft_pri_format_length(char fmt, t_pri_opts *opts)
 	else if (fmt == 't')
 		opts->length = ft_pri_length_max(opts->length, PRI_T);
 	else
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }

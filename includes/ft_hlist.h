@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 17:45:25 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/01 14:28:47 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:32:06 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ typedef struct	s_hlist
 t_hlist			*ft_hlist_new(void);
 void			ft_hlist_delete(t_hlist *list);
 
-t_bool			ft_hlist_push_back(t_hlist *list, void *data);
-t_bool			ft_hlist_push_front(t_hlist *list, void *data);
+bool			ft_hlist_push_back(t_hlist *list, void *data);
+bool			ft_hlist_push_front(t_hlist *list, void *data);
 
 void			*ft_hlist_back(t_hlist *list);
 
@@ -38,11 +38,11 @@ void			ft_hlist_find(t_hlist *list, void *ref, t_f_comp f);
 void			ft_hlist_remove(t_hlist *list, void *content);
 
 void			ft_hlist_apply(t_hlist *list, t_f_action f);
-int				ft_hlist_count_if(t_hlist *list, t_bool (*f)(void *));
+int				ft_hlist_count_if(t_hlist *list, bool (*f)(void *));
 
 t_hlist_it		ft_hlist_it_first(t_hlist *list);
 t_hlist_it		ft_hlist_it_next(t_hlist_it it);
 void			*ft_hlist_it_get(t_hlist_it it);
-t_bool			ft_hlist_it_end	(t_hlist_it it);
+bool			ft_hlist_it_end	(t_hlist_it it);
 
 #endif

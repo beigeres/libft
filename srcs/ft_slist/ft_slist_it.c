@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 14:59:41 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/27 18:47:38 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:29:48 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			*ft_slist_it_get(t_slist_it it)
 	return (it->content);
 }
 
-t_bool			ft_slist_it_end(t_slist_it it)
+bool			ft_slist_it_end(t_slist_it it)
 {
 	return (it == NULL);
 }

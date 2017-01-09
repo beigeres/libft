@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/16 16:50:09 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/16 17:06:19 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:27:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_bool	ft_list_it_end(t_list *list, t_list_it it)
+bool	ft_list_it_end(t_list *list, t_list_it it)
 {
 	(void)list;
 	return (it == NULL);

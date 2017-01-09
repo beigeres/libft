@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_section.h                                   :+:      :+:    :+:   */
+/*   ft_section.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/18 17:10:59 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/29 17:02:12 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/09 11:40:39 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/09 11:40:54 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_SECTION_H
-# define FT_GET_SECTION_H
+#ifndef FT_SECTION_H
+# define FT_SECTION_H
 
 /*
 ** get_next_line reads characters from fd using a BUFF_SIZE sized buffer
@@ -46,7 +46,7 @@
 # include "ft_memory.h"
 # include "ft_slist.h"
 
-typedef t_bool	(*t_comp_func)(void *, void *);
+typedef bool	(*t_comp_func)(void *, void *);
 
 typedef struct	s_gs_buff
 {

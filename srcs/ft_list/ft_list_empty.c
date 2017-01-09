@@ -6,15 +6,15 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 16:21:55 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 19:02:10 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:28:10 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_bool			ft_list_empty(const t_list *list)
+bool			ft_list_empty(const t_list *list)
 {
 	if (list == NULL)
-		return (FALSE);
+		return (false);
 	return (list->size == 0);
 }

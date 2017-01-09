@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:53:54 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/01 17:45:32 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:41:38 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-static t_bool	ft_strtrim_isblank(char c)
+static bool		ft_strtrim_isblank(char c)
 {
 	return (c == ' ' || c == '\n' || c == '\t');
 }

@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:13:08 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/29 16:54:52 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:41:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int				get_section_buff(t_gs_params *pa)
 	return (FT_GS_RET_V);
 }
 
-static t_bool	good_fd(t_gs_buff *buff, int *fd)
+static bool		good_fd(t_gs_buff *buff, int *fd)
 {
 	return (buff->fd == *fd);
 }

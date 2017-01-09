@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 17:19:59 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 15:39:59 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:38:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 */
 
 # include <stdlib.h>
+# include <stdbool.h>
 
 # include "ft_memory.h"
-# include "ft_bool.h"
 # include "ft_base.h"
 # include "ft_char_tools.h"
 

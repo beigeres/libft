@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 14:46:36 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 17:54:27 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:39:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ t_slist		*ft_slist_new(void *content)
 	return (list);
 }
 
-t_bool		ft_slist_push_front(t_slist **slist, void *content)
+bool		ft_slist_push_front(t_slist **slist, void *content)
 {
 	t_slist	*elem;
 
 	if (slist == NULL)
-		return (FALSE);
+		return (false);
 	if ((elem = ft_slist_new(content)) == NULL)
-		return (FALSE);
+		return (false);
 	elem->next = *slist;
 	*slist = elem;
-	return (TRUE);
+	return (true);
 }
 
 void		ft_slist_pop_front(t_slist **slist)

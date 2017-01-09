@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 16:16:41 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 11:27:45 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_LIST_H
 
 # include <stdlib.h>
-# include "ft_bool.h"
+# include <stdbool.h>
 
 typedef unsigned int	t_size_type;
 typedef unsigned int	t_distance;
@@ -51,7 +51,7 @@ void			ft_list_delete(t_list *list);
 t_list_it		ft_list_begin(t_list *list);
 t_list_it		ft_list_end(t_list *list);
 
-t_bool			ft_list_it_end(t_list *list, t_list_it it);
+bool			ft_list_it_end(t_list *list, t_list_it it);
 
 void			*ft_list_it_get(t_list_it it);
 void			ft_list_it_inc(t_list_it *it);
@@ -64,7 +64,7 @@ void			ft_list_it_advance(t_list_it *it, t_distance n);
 ** Capacity
 */
 
-t_bool			ft_list_empty(const t_list *list);
+bool			ft_list_empty(const t_list *list);
 t_size_type		ft_list_size(const t_list *list);
 
 /*
