@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 17:22:38 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/15 18:01:58 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/10 17:26:40 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ t_list_it	ft_list_erase(t_list *list, t_list_it it)
 		return (NULL);
 	if (it->prev != NULL)
 		it->prev->next = it->next;
+	else
+		list->first = it->next;
 	if (it->next != NULL)
 		it->next->prev = it->prev;
+	else
+		list->last = it->prev;
 	ret = it->next;
 	ft_list_e_delete(it);
 	list->size--;

@@ -6,18 +6,22 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 14:11:38 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/09 15:43:07 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
 
+# define FT_ERROR 1
+# define FT_GOOD 0
+
 # include <stdlib.h>
 # include <stdbool.h>
 
 typedef unsigned int	t_size_type;
 typedef unsigned int	t_distance;
+typedef int				t_errcode;
 
 typedef void	(*t_f_apply)(void *);
 
@@ -81,8 +85,8 @@ void			*ft_list_back(const t_list *list);
 
 void			ft_list_assign(t_list *list, t_size_type n, const void *val);
 
-void			ft_list_push_back(t_list *list, void *val);
-void			ft_list_push_front(t_list *list, void *val);
+int				ft_list_push_back(t_list *list, void *val);
+int				ft_list_push_front(t_list *list, void *val);
 void			ft_list_insert(t_list *list, t_list_it it, void *val);
 
 void			ft_list_pop_back(t_list *list);
