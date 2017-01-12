@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 15:43:07 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/12 10:59:06 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,19 @@ typedef t_list_e		*t_list_it;
 */
 
 t_list			*ft_list_new(void);
-t_list			*ft_list_cpy(t_list *list);
+t_list			*ft_list_cpy(const t_list *list);
 void			ft_list_delete(t_list *list);
 
 /*
 ** Iterators
 */
 
-t_list_it		ft_list_begin(t_list *list);
-t_list_it		ft_list_end(t_list *list);
+t_list_it		ft_list_begin(const t_list *list);
+t_list_it		ft_list_end(const t_list *list);
 
-bool			ft_list_it_end(t_list *list, t_list_it it);
+bool			ft_list_it_end(const t_list *list, t_list_it it);
+void			*ft_list_it_get(const t_list *list, t_list_it it);
 
-void			*ft_list_it_get(t_list_it it);
 void			ft_list_it_inc(t_list_it *it);
 void			ft_list_it_dec(t_list_it *it);
 t_list_it		ft_list_it_next(t_list_it it);
@@ -100,7 +100,8 @@ void			ft_list_clear(t_list *list);
 ** Extra
 */
 
-void			ft_list_apply(t_list *list, t_f_apply f);
+void			ft_list_apply(const t_list *list, t_f_apply f);
+t_list_it		ft_list_find(const t_list *list, void *ref);
 
 /*
 ** Internal

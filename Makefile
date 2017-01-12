@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/09 14:14:48 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/12 13:24:20 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,13 @@ LSTDIR		= $(SRCDIR)/ft_list
 LSTSRCNAM	= ft_list_new.c ft_list_cpy.c ft_list_delete.c \
 			  ft_list_begin.c ft_list_end.c \
 			  ft_list_it_inc.c ft_list_it_dec.c ft_list_it_get.c \
-			  ft_list_push_back.c ft_list_pop_back.c \
+			  ft_list_push_back.c ft_list_pop_back.c ft_list_pop_front.c \
 			  ft_list_empty.c ft_list_push_front.c \
 			  ft_list_it_advance.c ft_list_it_end.c \
 			  ft_list_it_next.c ft_list_it_next_n.c \
 			  ft_list_front.c ft_list_back.c ft_list_insert.c \
-			  ft_list_erase.c ft_list_erase_range.c ft_list_apply.c \
+			  ft_list_erase.c ft_list_erase_range.c \
+			  ft_list_apply.c ft_list_find.c \
 			  ft_list_size.c ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c
 LSTSRC		= $(LSTSRCNAM:%=$(LSTDIR)/%)
 LSTOBJ		= $(LSTSRC:%.c=%.o)

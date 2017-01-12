@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_it_get.c                                   :+:      :+:    :+:   */
+/*   test_list_pop_back.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 18:00:34 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/12 10:59:53 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/10 17:15:30 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/10 17:23:10 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "libft.h"
 
-void			*ft_list_it_get(const t_list *list, t_list_it it)
+int main(void)
 {
-	(void)list;
-	if (it == NULL)
-		return (NULL);
-	return (it->val);
+	t_list	*list;
+
+	list = ft_list_new();
+	ft_list_push_back(list, ft_strdup("Bonjour\n"));
+	ft_list_apply(list, &ft_putstr);
+	ft_list_pop_back(list);
+	//ft_list_pop_back(list);
+	ft_list_apply(list, &ft_putstr);
+	return (0);
 }

@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_it_get.c                                   :+:      :+:    :+:   */
+/*   ft_list_pop_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 18:00:34 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/12 10:59:53 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/12 13:25:45 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/12 13:26:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void			*ft_list_it_get(const t_list *list, t_list_it it)
+void			ft_list_pop_front(t_list *list)
 {
-	(void)list;
-	if (it == NULL)
-		return (NULL);
-	return (it->val);
+	if (list == NULL)
+		return ;
+	ft_list_erase(list, list->first);
 }

@@ -8,7 +8,7 @@ INCDIR		= includes
 #SRCNAM		= vector_test.c
 #SRCNAM		= vector_new_test.c
 #SRCNAM		= test_gnl.c
-SRCNAM		= test_list_cpy.c
+SRCNAM		= test_list_erase.c
 INCNAM		=
 
 CC			= clang

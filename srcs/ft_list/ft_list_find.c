@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_it_get.c                                   :+:      :+:    :+:   */
+/*   ft_list_find.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 18:00:34 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/12 10:59:53 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/12 10:47:36 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/12 10:59:36 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void			*ft_list_it_get(const t_list *list, t_list_it it)
+t_list_it		ft_list_find(const t_list *list, void *ref)
 {
-	(void)list;
-	if (it == NULL)
-		return (NULL);
-	return (it->val);
+	t_list_it	it;
+
+	it = ft_list_begin(list);
+	while (!ft_list_it_end(list, it))
+	{
+		if (ref == ft_list_it_get(list, it))
+			return (it);
+		ft_list_it_inc(&it);
+	}
+	return (ft_list_end(list));
 }
