@@ -25,6 +25,8 @@ vdprintf
 strsplit utiliser strchr
 strsplit verifier la valeur de retour de get\_word pour un NULL
 strlcat gerer quon accede pas a la derniere case du buffer s1 quand i == size
+Think of a makefile that can subcompile libft
+getnextline leaks
 
 ###lists
 CHOISIR ENTRE
