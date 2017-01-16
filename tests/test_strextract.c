@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_gnl.c                                         :+:      :+:    :+:   */
+/*   test_strextract.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/29 16:41:48 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/16 15:09:12 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/14 20:29:55 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/14 20:35:05 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	int		n;
-	char	*str;
-
-	while ((n = ft_get_section(0, &str, '\n')) > 0)
-	{
-		ft_printf("n=%d: %s\n", n, str);
-		free(str);
-	}
+	char	*str = argv[argc - 1];
+	ft_printf("%d\n", ft_strchr(str, ' '));
+	ft_printf("%s\n", ft_strextract(str, ' '));
 	return (0);
 }

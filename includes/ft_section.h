@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 11:40:39 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 11:40:54 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/16 15:01:48 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@
 # include "ft_memory.h"
 # include "ft_slist.h"
 
+//DEBUG
+#include "ft_printf.h"
 typedef bool	(*t_comp_func)(void *, void *);
 
 typedef struct	s_gs_buff

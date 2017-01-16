@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_gnl.c                                         :+:      :+:    :+:   */
+/*   ft_swap_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/29 16:41:48 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/16 15:09:12 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/16 11:38:28 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/16 11:39:00 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_memory.h"
 
-int main(void)
+void		ft_swap_int(int *a, int *b)
 {
-	int		n;
-	char	*str;
+	int		tmp;
 
-	while ((n = ft_get_section(0, &str, '\n')) > 0)
-	{
-		ft_printf("n=%d: %s\n", n, str);
-		free(str);
-	}
-	return (0);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

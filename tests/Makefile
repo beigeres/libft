@@ -8,7 +8,7 @@ INCDIR		= includes
 #SRCNAM		= vector_test.c
 #SRCNAM		= vector_new_test.c
 #SRCNAM		= test_gnl.c
-SRCNAM		= test_list_erase.c
+SRCNAM		= test_gnl.c
 INCNAM		=
 
 CC			= clang
@@ -26,18 +26,20 @@ INC			= $(INCNAM:%=$(INCDIR)/%)
 OBJ			= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 all: $(NAME)
+	@$(MAKE) $(LIBFTNAM) -C $(LIBFTDIR)
+	@$(MAKE) $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
+$(NAME): $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFTDIR)
+	$(MAKE) $(LIBFTNAM) -C $(LIBFTDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(INC)
 	mkdir -p $(OBJDIR)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-.PHONY: all git no printf check clean fclean re $(LIBFT)
+.PHONY: all git no printf check clean fclean re
 
 git:
 	git add $(SRC) $(INC) $(GIT)

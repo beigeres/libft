@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:59:56 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 16:39:58 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/16 15:16:17 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include <unistd.h>
 
 #include "libft.h"
+
+int bidule()
+{
+	int	*h;
+
+	*h = 5;
+
+	h = &h;
+
+	ft_list_apply(list, &free);
+}
 
 void	f(char *str)
 {

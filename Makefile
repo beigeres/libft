@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/15 21:33:48 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/16 15:10:39 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ PRIOBJ		= $(PRISRC:%.c=%.o)
 MEMDIR		= $(SRCDIR)/ft_memory
 MEMSRCNAM	= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 			  ft_memchr.c ft_memcmp.c ft_memalloc.c ft_memdel.c ft_memdup.c \
-			  ft_nrealloc.c
+			  ft_nrealloc.c ft_swap_int.c
 MEMSRC		= $(MEMSRCNAM:%=$(MEMDIR)/%)
 MEMOBJ		= $(MEMSRC:%.c=%.o)
 
@@ -129,7 +129,7 @@ SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -D FT_GS_EOL
 LDFLAGS		=
 
 INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \
