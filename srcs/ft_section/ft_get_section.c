@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:13:08 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/16 15:40:22 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/16 15:43:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int				ft_get_section_pa(t_gs_params *pa)
 	int				fd_cpy;
 	int				n;
 
-	ft_dprintf(2, "DEBUG BONJOUR\n");
-	fd_cpy = pa->fd; if ((pa->buff = (t_gs_buff *)ft_slist_find(buffs, &fd_cpy,
+	fd_cpy = pa->fd;
+	if ((pa->buff = (t_gs_buff *)ft_slist_find(buffs, &fd_cpy,
 					(t_comp_func)(&good_fd))) == NULL)
 	{
 		if ((pa->buff = malloc(sizeof(t_gs_buff))) == NULL)
@@ -81,7 +81,6 @@ int				ft_get_section_pa(t_gs_params *pa)
 		ft_slist_push_front(&buffs, pa->buff);
 	}
 	n = get_section_buff(pa);
-	ft_dprintf(2, "DEBUG: pa->buff->size %d\n", pa->buff->size);
 	if (n == -1 || pa->buff->size == 0)
 	{
 		free(pa->buff);
