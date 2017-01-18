@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:14:18 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/29 14:52:50 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/18 17:10:47 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *str)
 	long int	n;
 	int			neg;
 
+	if (str == NULL)
+		return (0);
 	while (ft_isspace(*str))
 		str++;
 	neg = 1;

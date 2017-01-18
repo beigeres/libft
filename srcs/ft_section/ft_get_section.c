@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:13:08 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/16 15:43:47 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/18 17:32:53 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 static int		extract(t_gs_params *pa, size_t line_size, size_t n)
 {
-	if (n == 0)
-		return (1);
 	if ((*(pa->line) = ft_nrealloc(*(pa->line), line_size,
 					line_size + n + 1 + FT_GS_EOL_ON)) == NULL)
 		return (-1);
@@ -81,7 +79,9 @@ int				ft_get_section_pa(t_gs_params *pa)
 		ft_slist_push_front(&buffs, pa->buff);
 	}
 	n = get_section_buff(pa);
-	if (n == -1 || pa->buff->size == 0)
+	if (n == 0)
+		free(*(pa->line));
+	else if (n == -1 || pa->buff->size == 0)
 	{
 		free(pa->buff);
 		ft_slist_remove(&buffs, pa->buff);

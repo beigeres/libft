@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/16 15:10:39 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/16 15:57:16 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,8 @@ WCHAROBJ	= $(WCHARSRC:%.c=%.o)
 
 PRINTDIR	= $(SRCDIR)/ft_print
 PRINTSRCNAM	= ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
-			  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+			  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+			  ft_putstr_line.c 
 PRINTSRC	= $(PRINTSRCNAM:%=$(PRINTDIR)/%)
 PRINTOBJ	= $(PRINTSRC:%.c=%.o)
 
@@ -129,7 +130,7 @@ SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -D FT_GS_EOL
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
 LDFLAGS		=
 
 INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \

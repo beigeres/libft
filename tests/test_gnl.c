@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/29 16:41:48 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/16 15:09:12 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/18 17:20:35 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ int main(void)
 		ft_printf("n=%d: %s\n", n, str);
 		free(str);
 	}
+	//Should not be there
+//	free(str);
 	return (0);
 }

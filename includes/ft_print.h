@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 15:50:05 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 15:54:28 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/16 15:57:45 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 void			ft_putchar(char c);
 void			ft_putstr(const char *str);
+void			ft_putstr_line(char *str);
 void			ft_putendl(const char *s);
 void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
