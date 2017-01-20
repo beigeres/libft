@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/16 15:57:16 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/20 19:43:33 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,9 +124,14 @@ VECSRCNAM	= ft_vector_new.c ft_vector_new_size.c ft_vector_delete.c \
 VECSRC		= $(VECSRCNAM:%=$(VECDIR)/%)
 VECOBJ		= $(VECSRC:%.c=%.o)
 
+SETDIR		= $(SRCDIR)/ft_set
+SETSRCNAM	= ft_set_new.c ft_set_insert.c ft_set_e_new.c
+SETSRC		= $(SETSRCNAM:%=$(SETDIR)/%)
+SETOBJ		= $(SETSRC:%.c=%.o)
+
 SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 			  $(BASSRC) $(CHARTSRC) $(HLSTSRC) $(SLSTSRC) $(MATHSRC) \
-			  $(WCHARSRC) $(PRINTSRC) $(VECSRC)
+			  $(WCHARSRC) $(PRINTSRC) $(VECSRC) $(SETSRC)
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
@@ -136,7 +141,7 @@ LDFLAGS		=
 INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
 			  ft_wchar.h ft_section.h get_next_line.h ft_list.h ft_print.h \
-			  ft_vector.h
+			  ft_vector.h ft_set.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
 GIT			= Makefile README.md auteur .gitignore
@@ -177,6 +182,8 @@ $(WCHAROBJ): $(INCDIR)/ft_wchar.h
 $(PRINTOBJ): $(INCDIR)/ft_print.h $(INCDIR)/ft_string.h
 
 $(VECOBJ): $(INCDIR)/ft_vector.h $(INCDIR)/ft_memory.h
+
+$(SETOBJ): $(INCDIR)/ft_set.h
 
 %.o: %.c
 	@printf "Compiling\t%s\n"	$@

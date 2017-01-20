@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/12 10:59:06 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/20 19:02:15 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void			ft_list_assign(t_list *list, t_size_type n, const void *val);
 
 int				ft_list_push_back(t_list *list, void *val);
 int				ft_list_push_front(t_list *list, void *val);
-void			ft_list_insert(t_list *list, t_list_it it, void *val);
+int				ft_list_insert(t_list *list, t_list_it it, void *val);
 
 void			ft_list_pop_back(t_list *list);
 void			ft_list_pop_front(t_list *list);
