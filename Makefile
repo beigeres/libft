@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/20 19:43:33 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/23 17:43:08 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,7 +125,10 @@ VECSRC		= $(VECSRCNAM:%=$(VECDIR)/%)
 VECOBJ		= $(VECSRC:%.c=%.o)
 
 SETDIR		= $(SRCDIR)/ft_set
-SETSRCNAM	= ft_set_new.c ft_set_insert.c ft_set_e_new.c
+SETSRCNAM	= ft_set_new.c \
+			  ft_set_begin.c ft_set_it_end.c ft_set_it_get.c \
+			  ft_set_it_inc.c ft_set_it_next.c \
+			  ft_set_insert.c ft_set_e_new.c 
 SETSRC		= $(SETSRCNAM:%=$(SETDIR)/%)
 SETOBJ		= $(SETSRC:%.c=%.o)
 
@@ -141,7 +144,7 @@ LDFLAGS		=
 INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \
 			  ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
 			  ft_wchar.h ft_section.h get_next_line.h ft_list.h ft_print.h \
-			  ft_vector.h ft_set.h
+			  ft_vector.h ft_set.h ft_defines.h
 INC			= $(INCNAM:%=$(INCDIR)/%)
 
 GIT			= Makefile README.md auteur .gitignore
@@ -154,7 +157,7 @@ $(NAME): $(OBJ)
 	@printf "Linking\t\t%s\n"	$@
 	@ar -rcs $@ $^
 
-$(LSTOBJ): $(INCDIR)/ft_list.h
+$(LSTOBJ): $(INCDIR)/ft_list.h $(INCDIR)/ft_defines.h
 
 $(PRIOBJ): $(INCDIR)/ft_printf.h $(INCDIR)/ft_hlist.h $(INCDIR)/ft_base.h \
 	$(INCDIR)/ft_math.h $(INCDIR)/ft_char_tools.h \
@@ -183,7 +186,7 @@ $(PRINTOBJ): $(INCDIR)/ft_print.h $(INCDIR)/ft_string.h
 
 $(VECOBJ): $(INCDIR)/ft_vector.h $(INCDIR)/ft_memory.h
 
-$(SETOBJ): $(INCDIR)/ft_set.h
+$(SETOBJ): $(INCDIR)/ft_set.h $(INCDIR)/ft_defines.h
 
 %.o: %.c
 	@printf "Compiling\t%s\n"	$@

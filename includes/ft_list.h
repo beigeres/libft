@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/20 19:02:15 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/23 18:41:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,16 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-typedef unsigned int	t_size_type;
-typedef unsigned int	t_distance;
-typedef int				t_errcode;
+# include "ft_defines.h"
 
-typedef void	(*t_f_apply)(void *);
+typedef struct s_list_e	t_list_e;
 
-typedef struct	s_list_e
+struct			s_list_e
 {
-	void			*val;
-	struct s_list_e	*prev;
-	struct s_list_e	*next;
-}				t_list_e;
+	void		*val;
+	t_list_e	*prev;
+	t_list_e	*next;
+};
 
 typedef struct	s_list
 {
@@ -39,7 +37,7 @@ typedef struct	s_list
 	t_list_e	*last;
 }				t_list;
 
-typedef t_list_e		*t_list_it;
+typedef t_list_e	*t_list_it;
 
 /*
 ** Basics
@@ -51,6 +49,7 @@ void			ft_list_delete(t_list *list);
 
 /*
 ** Iterators
+** Dont use ft_set_end as it doesnt work for an int marker in an array
 */
 
 t_list_it		ft_list_begin(const t_list *list);

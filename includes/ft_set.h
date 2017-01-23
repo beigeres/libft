@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 18:23:17 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/20 19:30:24 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/23 17:28:18 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-typedef bool	(*t_f_compare)(void *, void *);
+# include "ft_defines.h"
 
 typedef struct s_set_e	t_set_e;
 
@@ -35,12 +35,31 @@ typedef struct	s_set
 	t_f_compare	less;
 }				t_set;
 
+typedef t_set_e	*t_set_it;
+
 /*
 ** Basics
 */
 
 t_set			*ft_set_new(t_f_compare f);
 void			ft_set_delete(t_set *set);
+
+/*
+** Iterators
+** Dont use ft_set_end as it doesnt work for an int marker in an array
+*/
+
+t_set_it		ft_set_begin(const t_set *set);
+t_set_it		ft_set_end(const t_set *set);
+
+bool			ft_set_it_end(const t_set *set, t_set_it it);
+void			*ft_set_it_get(const t_set *set, t_set_it it);
+
+void			ft_set_it_inc(t_set_it *it);
+void			ft_set_it_dec(t_set_it *it);
+t_set_it		ft_set_it_next(t_set_it it);
+t_set_it		*ft_set_it_next_n(t_set_it it, t_distance n);
+void			ft_set_it_advance(t_set_it *it, t_distance n);
 
 /*
 ** Modifiers
