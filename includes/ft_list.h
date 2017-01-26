@@ -6,15 +6,12 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/23 18:41:11 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 21:11:04 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIST_H
 # define FT_LIST_H
-
-# define FT_ERROR 1
-# define FT_GOOD 0
 
 # include <stdlib.h>
 # include <stdbool.h>
@@ -22,6 +19,8 @@
 # include "ft_defines.h"
 
 typedef struct s_list_e	t_list_e;
+typedef struct s_list	t_list;
+typedef t_list_e		*t_list_it;
 
 struct			s_list_e
 {
@@ -30,14 +29,40 @@ struct			s_list_e
 	t_list_e	*next;
 };
 
-typedef struct	s_list
+struct			s_list
 {
-	t_size_type	size;
+	t_list		*(*cpy)(const t_list *list);
+	void		(*free)(t_list *list);
+
+	t_list_it	(*begin)(const t_list *list);
+	t_list_it	(*end)(const t_list *list);
+
+	bool		(*it_end)(const t_list *list, t_list_it it);
+	void		*(*it_get)(const t_list *list, t_list_it it);
+
+	bool		(*empty)(const t_list *list);
+	t_size_type	(*size)(const t_list *list);
+
+	void		*(*front)(const t_list *list);
+	void		*(*back)(const t_list *list);
+
+	int			(*push_back)(t_list *list, void *val);
+	int			(*push_front)(t_list *list, void *val);
+	int			(*insert)(t_list *list, t_list_it, void *val);
+
+	void		(*pop_back)(t_list *list);
+	void		(*pop_front)(t_list *list);
+	t_list_it	(*erase)(t_list *list, t_list_it it);
+	void		(*erase_range)(t_list *list, t_list_it first, t_list_it last);
+	void		(*clear)(t_list *list);
+
+	void		(*apply)(const t_list *list, t_f_apply f);
+	t_list_it	(*find)(const t_list *list, void *ref);
+
+	t_size_type	m_size;
 	t_list_e	*first;
 	t_list_e	*last;
-}				t_list;
-
-typedef t_list_e	*t_list_it;
+};
 
 /*
 ** Basics
@@ -82,8 +107,6 @@ void			*ft_list_back(const t_list *list);
 ** Modifiers
 */
 
-void			ft_list_assign(t_list *list, t_size_type n, const void *val);
-
 int				ft_list_push_back(t_list *list, void *val);
 int				ft_list_push_front(t_list *list, void *val);
 int				ft_list_insert(t_list *list, t_list_it it, void *val);
@@ -103,9 +126,16 @@ void			ft_list_apply(const t_list *list, t_f_apply f);
 t_list_it		ft_list_find(const t_list *list, void *ref);
 
 /*
+** Not Implemented yet
+*/
+
+void			ft_list_assign(t_list *list, t_size_type n, const void *val);
+
+/*
 ** Internal
 */
 
+void			ft_list_init(t_list *list);
 t_list_e		*ft_list_e_new(void *val, t_list_e *prev, t_list_e *next);
 void			ft_list_e_delete(t_list_e *elem);
 

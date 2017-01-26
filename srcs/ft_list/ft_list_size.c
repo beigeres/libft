@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 15:54:52 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/14 16:22:05 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 20:50:23 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_size_type		ft_list_size(const t_list *list)
 {
-	return (list->size);
+	return (list->m_size);
 }

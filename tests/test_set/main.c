@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:59:56 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/23 18:43:09 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 18:26:42 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		main(int argc, char **argv)
 		ft_set_insert(set, argv[i]);
 		++i;
 	}
+	/*
 	t_set_it	it;
 	it = ft_set_begin(set);
 	while (!ft_set_it_end(set, it))
@@ -73,6 +74,9 @@ int		main(int argc, char **argv)
 		ft_printf("%s\n", ft_set_it_get(set, it));
 		it = ft_set_it_next(it);
 	}
+	*/
+	print_set(set);
+	ft_set_e_rotate_left(set->root);
 	print_set(set);
 	return (0);
 }

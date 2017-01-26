@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 18:23:17 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/23 17:28:18 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 18:28:01 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ int				ft_set_insert(t_set *set, void *val);
 t_set_e			*ft_set_e_new(void *val, t_set_e *right, t_set_e *left,
 		t_set_e *parent);
 void			ft_set_e_delete(t_set_e *elem);
+
+t_set_e			*ft_set_e_grandparent(t_set_e *elem);
+t_set_e			*ft_set_e_uncle(t_set_e *elem);
+
 int				ft_set_insert_r(t_set_e *elem, t_f_compare less, void *val);
+void			ft_set_e_rotate_left(t_set *set, t_set_e *elem);
 
 #endif

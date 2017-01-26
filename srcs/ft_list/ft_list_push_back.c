@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 16:05:32 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/09 15:42:55 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 20:48:48 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int				ft_list_push_back(t_list *list, void *val)
 	else
 		list->last->next = elem;
 	list->last = elem;
-	++list->size;
+	++list->m_size;
 	return (0);
 }

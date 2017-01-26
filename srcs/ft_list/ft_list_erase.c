@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 17:22:38 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/20 19:02:06 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/26 20:50:10 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ t_list_it	ft_list_erase(t_list *list, t_list_it it)
 		list->last = it->prev;
 	ret = it->next;
 	ft_list_e_delete(it);
-	list->size--;
+	list->m_size--;
 	return (ret);
 }
