@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 17:13:08 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/18 17:32:53 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/27 19:45:04 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int				ft_get_section_pa(t_gs_params *pa)
 	n = get_section_buff(pa);
 	if (n == 0)
 		free(*(pa->line));
-	else if (n == -1 || pa->buff->size == 0)
+	if (n == -1 || pa->buff->size == 0)
 	{
 		free(pa->buff);
 		ft_slist_remove(&buffs, pa->buff);

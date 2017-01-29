@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 18:23:17 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/26 18:28:01 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:23:55 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ t_set_e			*ft_set_e_grandparent(t_set_e *elem);
 t_set_e			*ft_set_e_uncle(t_set_e *elem);
 
 int				ft_set_insert_r(t_set_e *elem, t_f_compare less, void *val);
-void			ft_set_e_rotate_left(t_set *set, t_set_e *elem);
+void			ft_set_rotate_left(t_set *set, t_set_e *elem);
 
 #endif

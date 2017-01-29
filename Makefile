@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/26 20:35:15 by etrobert         ###   ########.fr        #
+#    Updated: 2017/01/29 20:03:48 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,11 @@ HLSTSRC		= $(HLSTSRCNAM:%=$(HLSTDIR)/%)
 HLSTOBJ		= $(HLSTSRC:%.c=%.o)
 
 SLSTDIR		= $(SRCDIR)/ft_slist
-SLSTSRCNAM	= ft_slist.c ft_slist_tools.c ft_slist_it.c
+SLSTSRCNAM	= ft_slist_new.c ft_slist_remove.c ft_slist_push_front.c \
+			  ft_slist_apply.c ft_slist_find.c ft_slist_count_if.c \
+			  ft_slist_pop_front.c \
+			  ft_slist_it_first.c ft_slist_it_next.c ft_slist_it_end.c \
+			  ft_slist_it_get.c
 SLSTSRC		= $(SLSTSRCNAM:%=$(SLSTDIR)/%)
 SLSTOBJ		= $(SLSTSRC:%.c=%.o)
 
@@ -129,7 +133,7 @@ SETDIR		= $(SRCDIR)/ft_set
 SETSRCNAM	= ft_set_new.c \
 			  ft_set_begin.c ft_set_it_end.c ft_set_it_get.c \
 			  ft_set_it_inc.c ft_set_it_next.c \
-			  ft_set_insert.c ft_set_e_new.c
+			  ft_set_insert.c ft_set_e_new.c ft_set_rotate_left.c
 SETSRC		= $(SETSRCNAM:%=$(SETDIR)/%)
 SETOBJ		= $(SETSRC:%.c=%.o)
 
@@ -139,7 +143,7 @@ SRC			= $(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 OBJ			= $(SRC:%.c=%.o)
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR)
+CFLAGS		= -Wall -Wextra -Werror -I$(INCDIR) -g
 LDFLAGS		=
 
 INCNAM		= libft.h ft_math.h ft_base.h ft_printf.h \

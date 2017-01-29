@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_insert.c                                   :+:      :+:    :+:   */
+/*   ft_slist_pop_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/29 20:07:16 by etrobert         ###   ########.fr       */
+/*   Created: 2017/01/27 19:56:23 by etrobert          #+#    #+#             */
+/*   Updated: 2017/01/27 19:56:56 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_slist.h"
 
-int				ft_list_insert(t_list *list, t_list_it it, void *val)
+void		ft_slist_pop_front(t_slist **slist)
 {
-	t_list_e	*elem;
+	t_slist	*tmp;
 
-	if (list == NULL)
-		return (0);
-	if (it == NULL)
-	{
-		ft_list_push_back(list, val);
-		return (0);
-	}
-	if ((elem = ft_list_e_new(val, it->prev, it)) == NULL)
-		return (-1);
-	it->prev = elem;
-	if (elem->prev != NULL)
-		elem->prev->next = elem;
-	++(list->m_size);
-	return (0);
+	if (slist == NULL)
+		return ;
+	if (*slist == NULL)
+		return ;
+	tmp = (*slist)->next;
+	free(*slist);
+	*slist = tmp;
 }
