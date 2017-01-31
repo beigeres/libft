@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 19:21:35 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/29 20:07:16 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/31 16:26:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int				ft_list_insert(t_list *list, t_list_it it, void *val)
 	it->prev = elem;
 	if (elem->prev != NULL)
 		elem->prev->next = elem;
+	else
+		list->first = elem;
 	++(list->m_size);
 	return (0);
 }
