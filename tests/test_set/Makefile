@@ -4,7 +4,7 @@ SRCDIR		= .
 OBJDIR		= objs
 INCDIR		= includes
 
-SRCNAM		= main.c
+SRCNAM		= main.c print_set_nodes.c
 INCNAM		=
 
 CC			= clang

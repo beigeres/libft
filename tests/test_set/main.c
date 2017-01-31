@@ -6,44 +6,14 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:59:56 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/26 18:26:42 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:25:21 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	print_sep(int off)
-{
-	int	i;
-
-	if (off == 0)
-		return ;
-	i = 0;
-	while (i < off)
-	{
-		ft_printf("--");
-		++i;
-	}
-	ft_printf(" ");
-}
-
-void	print_set_r(t_set_e *elem, int off)
-{
-	print_sep(off);
-	if (elem == NULL)
-	{
-		ft_printf("NULL\n");
-		return ;
-	}
-	ft_printf("%s\n", (char *)elem->val);
-	print_set_r(elem->left, off + 1);
-	print_set_r(elem->right, off + 1);
-}
-
-void	print_set(t_set *set)
-{
-	print_set_r(set->root, 0);
-}
+void	print_set(t_set *set);
+void	print_set_nodes(t_set *set);
 
 bool	less(char *s1, char *s2)
 {
@@ -75,8 +45,11 @@ int		main(int argc, char **argv)
 		it = ft_set_it_next(it);
 	}
 	*/
-	print_set(set);
-	ft_set_e_rotate_left(set->root);
-	print_set(set);
+//	print_set(set);
+	print_set_nodes(set);
+	ft_set_rotate_left(set, set->root);
+	ft_printf("\n");
+	print_set_nodes(set);
+//	print_set(set);
 	return (0);
 }
