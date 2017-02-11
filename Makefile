@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/01/29 20:03:48 by etrobert         ###   ########.fr        #
+#    Updated: 2017/02/11 21:11:39 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -154,11 +154,12 @@ INC			=	$(INCNAM:%=$(INCDIR)/%)
 
 GIT			=	Makefile README.md auteur .gitignore
 
-.PHONY: fclean all re git no printf check clean
+.PHONY: fclean all re git no printf check clean printname
 
 all: $(NAME)
 
 $(NAME): $(OBJ) 
+	@$(MAKE) printname
 	@printf "Linking\t\t%s\n"	$@
 	@ar -rcs $@ $^
 
@@ -194,18 +195,25 @@ $(VECOBJ): $(INCDIR)/ft_vector.h $(INCDIR)/ft_memory.h
 $(SETOBJ): $(INCDIR)/ft_set.h $(INCDIR)/ft_defines.h
 
 %.o: %.c
+	@$(MAKE) printname
 	@printf "Compiling\t%s\n"	$@
 	@$(CC) -c $(CFLAGS) -o $@ $< 
 
+printname:
+	@printf "[%-20s " "$(NAME)]"
+
 git:
+	@$(MAKE) printname
 	@echo Adding files to git repository
 	git add $(SRC) $(INC) $(GIT)
 
 no:
+	@$(MAKE) printname
 	@echo "Passage de la norminette :"
 	@norminette $(SRC) $(INC)| grep -B1 Error | cat
 
 printf:
+	@$(MAKE) printname
 	@echo "Detection des printf :\033[1;31m"
 	@grep printf -r $(SRCDIR) $(INCDIR) | cat
 	@printf "\033[0m"
@@ -213,10 +221,12 @@ printf:
 check: no printf
 
 clean:
+	@$(MAKE) printname
 	@echo Suppressing obj files
 	@rm -rf $(OBJ)
 
 fclean: clean
+	@$(MAKE) printname
 	@echo Suppressing $(NAME)
 	@rm -rf $(NAME)
 
