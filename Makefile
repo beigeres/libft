@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/02/17 15:20:48 by etrobert         ###   ########.fr        #
+#    Updated: 2017/02/17 18:31:29 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LSTSRCNAM	=	ft_list_new.c ft_list_cpy.c ft_list_delete.c \
 			 	ft_list_it_next.c ft_list_it_next_n.c \
 			 	ft_list_front.c ft_list_back.c ft_list_insert.c \
 			 	ft_list_erase.c ft_list_erase_range.c \
-			 	ft_list_apply.c ft_list_find.c \
+			 	ft_list_apply.c ft_list_sapply.c ft_list_find.c \
 			 	ft_list_size.c \
 			 	ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c ft_list_init.c
 LSTSRC		=	$(LSTSRCNAM:%=$(LSTDIR)/%)
@@ -140,7 +140,7 @@ SETOBJ		=	$(SETSRC:%.c=%.o)
 ENDDIR		=	$(SRCDIR)/ft_endian
 ENDSRCNAM	=	ft_int32_big_endian.c ft_uint32_big_endian.c \
 				ft_ushort16_big_endian.c ft_uchar8_big_endian.c \
-				ft_is_big_endian.c
+				ft_is_big_endian.c ft_short16_big_endian.c
 ENDSRC		=	$(ENDSRCNAM:%=$(ENDDIR)/%)
 ENDOBJ		=	$(ENDSRC:%.c=%.o)
 

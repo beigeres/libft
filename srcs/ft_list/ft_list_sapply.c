@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_endian.h                                        :+:      :+:    :+:   */
+/*   ft_list_sapply.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 19:41:41 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/17 16:21:18 by etrobert         ###   ########.fr       */
+/*   Created: 2017/02/17 18:29:05 by etrobert          #+#    #+#             */
+/*   Updated: 2017/02/17 18:32:37 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ENDIAN_H
-# define FT_ENDIAN_H
+#include "ft_list.h"
 
-# include <stdbool.h>
+int				ft_list_sapply(const t_list *list, t_f_sapply f)
+{
+	t_list_e	*cur;
+	int			ret;
 
-bool			ft_is_big_endian(void);
-int				ft_int32_big_endian(int n);
-unsigned int	ft_uint32_big_endian(unsigned int n);
-short			ft_short16_big_endian(short n);
-unsigned short	ft_ushort16_big_endian(unsigned short n);
-unsigned char	ft_uchar8_big_endian(unsigned char n);
-
-#endif
+	if (list == NULL || f == NULL)
+		return (FT_GOOD);
+	cur = list->first;
+	while (cur != NULL)
+	{
+		if ((ret = (*f)(cur->val)) != FT_GOOD)
+			return (ret);
+		cur = cur->next;
+	}
+	return (FT_GOOD);
+}

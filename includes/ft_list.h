@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/15 19:15:00 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/02/17 18:31:11 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void			ft_list_clear(t_list *list);
 */
 
 void			ft_list_apply(const t_list *list, t_f_apply f);
+int				ft_list_sapply(const t_list *list, t_f_sapply f);
 t_list_it		ft_list_find(const t_list *list, void *ref);
 
 /*
