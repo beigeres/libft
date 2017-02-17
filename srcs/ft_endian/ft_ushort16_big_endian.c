@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_endian.h                                        :+:      :+:    :+:   */
+/*   ft_ushort16_big_endian.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 19:41:41 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/17 15:20:50 by etrobert         ###   ########.fr       */
+/*   Created: 2017/02/17 14:32:53 by etrobert          #+#    #+#             */
+/*   Updated: 2017/02/17 14:36:24 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ENDIAN_H
-# define FT_ENDIAN_H
+#include "ft_endian.h"
 
-# include <stdbool.h>
-
-bool			ft_is_big_endian(void);
-int				ft_int32_big_endian(int n);
-unsigned int	ft_uint32_big_endian(unsigned int n);
-unsigned short	ft_ushort16_big_endian(unsigned short n);
-unsigned char	ft_uchar8_big_endian(unsigned char n);
-
-#endif
+unsigned short	ft_ushort16_big_endian(unsigned short n)
+{
+	if (ft_is_big_endian())
+		return (n);
+	return (((n & 255) << 8) +
+			((n >> 8) & 255));
+}

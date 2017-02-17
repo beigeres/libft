@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/02/17 13:27:49 by etrobert         ###   ########.fr        #
+#    Updated: 2017/02/17 15:20:48 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,7 +138,9 @@ SETSRC		=	$(SETSRCNAM:%=$(SETDIR)/%)
 SETOBJ		=	$(SETSRC:%.c=%.o)
 
 ENDDIR		=	$(SRCDIR)/ft_endian
-ENDSRCNAM	=	ft_int32_big_endian.c ft_is_big_endian.c ft_uint32_big_endian.c
+ENDSRCNAM	=	ft_int32_big_endian.c ft_uint32_big_endian.c \
+				ft_ushort16_big_endian.c ft_uchar8_big_endian.c \
+				ft_is_big_endian.c
 ENDSRC		=	$(ENDSRCNAM:%=$(ENDDIR)/%)
 ENDOBJ		=	$(ENDSRC:%.c=%.o)
 
