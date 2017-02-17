@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_init.c                                     :+:      :+:    :+:   */
+/*   ft_uint32_big_endian.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/26 20:33:07 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/15 19:15:20 by etrobert         ###   ########.fr       */
+/*   Created: 2017/02/17 13:27:00 by etrobert          #+#    #+#             */
+/*   Updated: 2017/02/17 13:27:29 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_endian.h"
 
-void		ft_list_init(t_list *list)
+unsigned int	ft_uint32_big_endian(unsigned int n)
 {
-	list->m_size = 0;
-	list->first = NULL;
-	list->last = NULL;
+	if (ft_is_big_endian())
+		return (n);
+	return (((n & 255) << 24) +
+			(((n >> 8) & 255) << 16) +
+			(((n >> 16) & 255) << 8) +
+			((n >> 24) & 255));
 }

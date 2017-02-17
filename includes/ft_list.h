@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 16:16:21 by etrobert          #+#    #+#             */
-/*   Updated: 2017/01/26 21:11:04 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/02/15 19:15:00 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,34 +31,6 @@ struct			s_list_e
 
 struct			s_list
 {
-	t_list		*(*cpy)(const t_list *list);
-	void		(*free)(t_list *list);
-
-	t_list_it	(*begin)(const t_list *list);
-	t_list_it	(*end)(const t_list *list);
-
-	bool		(*it_end)(const t_list *list, t_list_it it);
-	void		*(*it_get)(const t_list *list, t_list_it it);
-
-	bool		(*empty)(const t_list *list);
-	t_size_type	(*size)(const t_list *list);
-
-	void		*(*front)(const t_list *list);
-	void		*(*back)(const t_list *list);
-
-	int			(*push_back)(t_list *list, void *val);
-	int			(*push_front)(t_list *list, void *val);
-	int			(*insert)(t_list *list, t_list_it, void *val);
-
-	void		(*pop_back)(t_list *list);
-	void		(*pop_front)(t_list *list);
-	t_list_it	(*erase)(t_list *list, t_list_it it);
-	void		(*erase_range)(t_list *list, t_list_it first, t_list_it last);
-	void		(*clear)(t_list *list);
-
-	void		(*apply)(const t_list *list, t_f_apply f);
-	t_list_it	(*find)(const t_list *list, void *ref);
-
 	t_size_type	m_size;
 	t_list_e	*first;
 	t_list_e	*last;
