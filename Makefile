@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/02/17 18:31:29 by etrobert         ###   ########.fr        #
+#    Updated: 2017/02/18 20:52:47 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -144,9 +144,16 @@ ENDSRCNAM	=	ft_int32_big_endian.c ft_uint32_big_endian.c \
 ENDSRC		=	$(ENDSRCNAM:%=$(ENDDIR)/%)
 ENDOBJ		=	$(ENDSRC:%.c=%.o)
 
+CBUFFDIR	=	$(SRCDIR)/ft_cbuff
+CBUFFSRCNAM	=	ft_cbuff_new.c ft_cbuff_delete.c \
+				ft_cbuff_write.c ft_cbuff_move.c ft_cbuff_read.c
+CBUFFSRC	=	$(CBUFFSRCNAM:%=$(CBUFFDIR)/%)
+CBUFFOBJ	=	$(CBUFFSRC:%.c=%.o)
+
 SRC			=	$(LSTSRC) $(PRISRC) $(MEMSRC) $(STRSRC) $(GSSRC) $(GNLSRC) \
 			 	$(BASSRC) $(CHARTSRC) $(HLSTSRC) $(SLSTSRC) $(MATHSRC) \
-			 	$(WCHARSRC) $(PRINTSRC) $(VECSRC) $(SETSRC) $(ENDSRC)
+			 	$(WCHARSRC) $(PRINTSRC) $(VECSRC) $(SETSRC) $(ENDSRC) \
+				$(CBUFFSRC)
 OBJ			=	$(SRC:%.c=%.o)
 
 CC			=	gcc
@@ -156,7 +163,7 @@ LDFLAGS		=
 INCNAM		=	libft.h ft_math.h ft_base.h ft_printf.h \
 			 	ft_slist.h ft_hlist.h ft_char_tools.h ft_memory.h ft_string.h \
 			 	ft_wchar.h ft_section.h get_next_line.h ft_list.h ft_print.h \
-			 	ft_vector.h ft_set.h ft_defines.h ft_endian.h
+			 	ft_vector.h ft_set.h ft_defines.h ft_endian.h ft_cbuff.h
 INC			=	$(INCNAM:%=$(INCDIR)/%)
 
 GIT			=	Makefile README.md auteur .gitignore
@@ -202,6 +209,8 @@ $(VECOBJ): $(INCDIR)/ft_vector.h $(INCDIR)/ft_memory.h
 $(SETOBJ): $(INCDIR)/ft_set.h $(INCDIR)/ft_defines.h
 
 $(ENDOBJ): $(INCDIR)/ft_endian.h
+
+$(CBUFF): $(INCDIR)/ft_cbuff.h
 
 %.o: %.c
 	@$(MAKE) printname
