@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:41:17 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/13 17:24:38 by mverdier         ###   ########.fr       */
+/*   Updated: 2017/02/18 21:02:45 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 # include "ft_vector.h"
 # include "ft_set.h"
 # include "ft_endian.h"
+# include "ft_cbuff.h"
 
 #endif

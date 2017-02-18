@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/18 20:38:09 by etrobert          #+#    #+#             */
-/*   Updated: 2017/02/18 20:54:06 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/02/18 21:09:20 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void				ft_cbuff_write(t_cbuff *buff, void *src, size_t pos,
 	{
 		((unsigned char *)(buff->buff))[(pos + i) % buff->size] =
 			((unsigned char *)(src))[i];
+		++i;
 	}
 }
