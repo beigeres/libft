@@ -6,11 +6,14 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/02/18 20:52:47 by etrobert         ###   ########.fr        #
+#    Updated: 2017/03/03 22:49:05 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
+
+COLOR		=	\033[36m
+COLOR_RESET	=	\033[0m
 
 SRCDIR		=	srcs
 INCDIR		=	includes
@@ -27,7 +30,8 @@ LSTSRCNAM	=	ft_list_new.c ft_list_cpy.c ft_list_delete.c \
 			 	ft_list_erase.c ft_list_erase_range.c \
 			 	ft_list_apply.c ft_list_sapply.c ft_list_find.c \
 			 	ft_list_size.c \
-			 	ft_list_e_new.c ft_list_e_delete.c ft_list_clear.c ft_list_init.c
+			 	ft_list_e_new.c ft_list_e_delete.c \
+				ft_list_clear.c ft_list_init.c
 LSTSRC		=	$(LSTSRCNAM:%=$(LSTDIR)/%)
 LSTOBJ		=	$(LSTSRC:%.c=%.o)
 
@@ -54,10 +58,12 @@ STRDIR		=	$(SRCDIR)/ft_string
 STRSRCNAM	=	ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 			 	ft_strnew.c ft_strdel.c \
 			 	ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c \
-			 	ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c \
+			 	ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c \
+				ft_strmapi.c \
 			 	ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
 			 	ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_strsplit.c \
-			 	ft_itoa.c ft_atoi.c ft_strextract.c ft_strsplit_str.c ft_strrextract.c
+			 	ft_itoa.c ft_atoi.c ft_strextract.c ft_strsplit_str.c \
+				ft_strrextract.c
 STRSRC		=	$(STRSRCNAM:%=$(STRDIR)/%)
 STROBJ		=	$(STRSRC:%.c=%.o)
 
@@ -146,7 +152,8 @@ ENDOBJ		=	$(ENDSRC:%.c=%.o)
 
 CBUFFDIR	=	$(SRCDIR)/ft_cbuff
 CBUFFSRCNAM	=	ft_cbuff_new.c ft_cbuff_delete.c \
-				ft_cbuff_write.c ft_cbuff_move.c ft_cbuff_read.c
+				ft_cbuff_write.c ft_cbuff_move.c ft_cbuff_read.c \
+				ft_cbuff_clean.c ft_cbuff_set.c
 CBUFFSRC	=	$(CBUFFSRCNAM:%=$(CBUFFDIR)/%)
 CBUFFOBJ	=	$(CBUFFSRC:%.c=%.o)
 
@@ -174,7 +181,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) 
 	@$(MAKE) printname
-	@printf "Linking\t\t%s\n"	$@
+	@printf "%-15s%s\n" Linking $@
 	@ar -rcs $@ $^
 
 $(LSTOBJ): $(INCDIR)/ft_list.h $(INCDIR)/ft_defines.h
@@ -210,15 +217,17 @@ $(SETOBJ): $(INCDIR)/ft_set.h $(INCDIR)/ft_defines.h
 
 $(ENDOBJ): $(INCDIR)/ft_endian.h
 
-$(CBUFF): $(INCDIR)/ft_cbuff.h
+$(CBUFF): $(INCDIR)/ft_cbuff.h $(INCDIR)/ft_memory.h
 
 %.o: %.c
 	@$(MAKE) printname
-	@printf "Compiling\t%s\n"	$@
+	@printf "%-15s%s\n" Compiling $@ 
 	@$(CC) -c $(CFLAGS) -o $@ $< 
 
 printname:
-	@printf "[%-20s " "$(NAME)]"
+	@printf "$(COLOR)"
+	@printf "[%-15s " "$(NAME)]"
+	@printf "$(COLOR_RESET)"
 
 git:
 	@$(MAKE) printname
