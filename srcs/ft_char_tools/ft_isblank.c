@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:37:32 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 14:54:37 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/03/06 17:48:30 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_char_tools.h"
 
-int	ft_isblank(int c)
+bool			ft_isblank(char c)
 {
 	return (c == ' ' || c == '\t');
 }

@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:08:27 by etrobert          #+#    #+#             */
-/*   Updated: 2016/12/18 14:54:50 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/03/06 17:51:25 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_char_tools.h"
 
-int	ft_isspace(int c)
+bool			ft_isspace(char c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' ||
 			c == '\f' || c == '\r' || c == ' ');

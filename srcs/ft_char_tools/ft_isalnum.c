@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:55:50 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 19:15:06 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/03/06 17:45:58 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_char_tools.h"
 
-int	ft_isalnum(int c)
+bool			ft_isalnum(char c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }

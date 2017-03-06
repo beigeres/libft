@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 15:40:21 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 19:14:37 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/03/06 17:44:26 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_char_tools.h"
 
-int	ft_isalpha(int c)
+bool			ft_isalpha(char c)
 {
 	return ((c >= 'a' && c <= 'z') ||
 			(c >= 'A' && c <= 'Z'));

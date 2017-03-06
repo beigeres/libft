@@ -6,13 +6,13 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:51:05 by etrobert          #+#    #+#             */
-/*   Updated: 2016/11/28 19:15:44 by etrobert         ###   ########.fr       */
+/*   Updated: 2017/03/06 17:57:37 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_char_tools.h"
 
-int	ft_tolower(int c)
+char			ft_tolower(char c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c - 'A' + 'a');
