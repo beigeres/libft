@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/03/06 17:17:54 by etrobert         ###   ########.fr        #
+#    Updated: 2017/03/12 20:26:06 by etrobert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ LSTSRC		=	$(LSTSRCNAM:%=$(LSTDIR)/%)
 LSTOBJ		=	$(LSTSRC:%.c=%.o)
 
 PRIDIR		=	$(SRCDIR)/ft_printf
-PRISRCNAM	=	ft_printf.c ft_vprintf.c ft_pri_opts.c ft_pri_size.c \
+PRISRCNAM	=	ft_printf.c ft_asprintf.c ft_sprintf.c ft_dprintf.c \
+			   	ft_vprintf.c ft_vsprintf.c ft_vasprintf.c ft_vdprintf.c \
+				ft_pri_opts.c ft_pri_size.c \
 			 	ft_pri_format.c ft_pri_print.c ft_printf.c ft_vprintf.c \
 			 	ft_pri_fmt_fct.c ft_pri_fmt_fct_ox.c ft_pri_fmt_fct_cs.c \
 			 	ft_pri_fmt_fct_u.c ft_pri_is_number.c ft_pri_decrypt_format.c \

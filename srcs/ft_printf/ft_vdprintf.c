@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nrealloc.c                                      :+:      :+:    :+:   */
+/*   ft_vdprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:13:57 by etrobert          #+#    #+#             */
-/*   Updated: 2017/03/10 19:00:07 by etrobert         ###   ########.fr       */
+/*   Created: 2017/03/12 20:25:08 by etrobert          #+#    #+#             */
+/*   Updated: 2017/03/12 20:25:54 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memory.h"
+#include "ft_printf.h"
 
-void	*ft_nrealloc(void *ptr, size_t old_size, size_t new_size)
+int				ft_vdprintf(int fd, const char *fmt, va_list ap)
 {
-	void	*ret;
+	char		*str;
+	int			n;
+	ssize_t		ret;
 
-	if ((ret = malloc(new_size)) == NULL)
-	{
-		free(ptr);
-		return (NULL);
-	}
-	if (ptr != NULL)
-	{
-		ft_memcpy(ret, ptr, old_size);
-		free(ptr);
-	}
-	return (ret);
+	if ((n = ft_vasprintf(&str, fmt, ap)) < 0)
+		return (-1);
+	ret = write(fd, str, n);
+	free(str);
+	if (ret < 0)
+		return (ret);
+	return (n);
 }

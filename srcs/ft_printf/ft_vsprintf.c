@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nrealloc.c                                      :+:      :+:    :+:   */
+/*   ft_vsprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:13:57 by etrobert          #+#    #+#             */
-/*   Updated: 2017/03/10 19:00:07 by etrobert         ###   ########.fr       */
+/*   Created: 2017/03/12 20:19:08 by etrobert          #+#    #+#             */
+/*   Updated: 2017/03/12 20:22:44 by etrobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memory.h"
+#include "ft_printf.h"
 
-void	*ft_nrealloc(void *ptr, size_t old_size, size_t new_size)
+int				ft_vsprintf(char *str, const char *fmt, va_list ap)
 {
-	void	*ret;
+	t_hlist		*opts;
+	int			n;
 
-	if ((ret = malloc(new_size)) == NULL)
+	if (str == NULL)
+		return (-1);
+	if ((opts = ft_hlist_new()) == NULL)
+		return (-1);
+	if ((n = ft_pri_decrypt_format(fmt, ap, opts)) < 0)
 	{
-		free(ptr);
-		return (NULL);
+		ft_hlist_delete(opts);
+		return (-1);
 	}
-	if (ptr != NULL)
-	{
-		ft_memcpy(ret, ptr, old_size);
-		free(ptr);
-	}
-	return (ret);
+	ft_pri_print(str, fmt, opts);
+	ft_hlist_apply(opts, (t_f_action) & ft_pri_opts_delete);
+	ft_hlist_delete(opts);
+	return (n);
 }
