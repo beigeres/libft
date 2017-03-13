@@ -182,7 +182,7 @@ GIT			=	Makefile README.md auteur .gitignore
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@printf "%-15s%s\n" Linking $@
 	@ar -rcs $@ $^
 
@@ -222,7 +222,7 @@ $(ENDOBJ): $(INCDIR)/ft_endian.h
 $(CBUFF): $(INCDIR)/ft_cbuff.h $(INCDIR)/ft_memory.h
 
 %.o: %.c
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@printf "%-15s%s\n" Compiling $@ 
 	@$(CC) -c $(CFLAGS) -o $@ $< 
 
@@ -237,12 +237,12 @@ git:
 	git add $(SRC) $(INC) $(GIT)
 
 no:
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@echo "Passage de la norminette :"
 	@norminette $(SRC) $(INC)| grep -B1 Error | cat
 
 printf:
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@echo "Detection des printf :\033[1;31m"
 	@grep printf -r $(SRCDIR) $(INCDIR) | cat
 	@printf "\033[0m"
@@ -250,16 +250,16 @@ printf:
 check: no printf
 
 clean:
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@echo Suppressing obj files
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@$(MAKE) printname
+	@$(MAKE) -s printname
 	@echo Suppressing $(NAME)
 	@rm -rf $(NAME)
 
 # $(MAKE) needed so that the cleaning is done before starting to create again \
 	# cf make -j 
 re: fclean
-	@$(MAKE) all
+	@$(MAKE) -s all
