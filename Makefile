@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/03/12 20:26:06 by etrobert         ###   ########.fr        #
+#    Updated: 2017/03/16 19:10:30 by tbeldame         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ STRSRCNAM	=	ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 			 	ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
 			 	ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_strsplit.c \
 			 	ft_itoa.c ft_atoi.c ft_strextract.c ft_strsplit_str.c \
-				ft_strrextract.c ft_str_test_chars.c
+				ft_strrextract.c ft_str_test_chars.c ft_isnumber.c
 STRSRC		=	$(STRSRCNAM:%=$(STRDIR)/%)
 STROBJ		=	$(STRSRC:%.c=%.o)
 
