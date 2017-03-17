@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/03/12 20:26:06 by etrobert         ###   ########.fr        #
+#    Updated: 2017/03/17 16:45:27 by mverdier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ BASOBJ		=	$(BASSRC:%.c=%.o)
 
 CHARTDIR	=	$(SRCDIR)/ft_char_tools
 CHARTSRCNAM	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-			 	ft_isblank.c ft_isspace.c ft_toupper.c ft_tolower.c
+			 	ft_isblank.c ft_isspace.c ft_toupper.c ft_tolower.c ft_isnumber.c\
 CHARTSRC	=	$(CHARTSRCNAM:%=$(CHARTDIR)/%)
 CHARTOBJ	=	$(CHARTSRC:%.c=%.o)
 
