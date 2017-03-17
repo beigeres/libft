@@ -6,7 +6,7 @@
 #    By: etrobert <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/18 15:32:17 by etrobert          #+#    #+#              #
-#    Updated: 2017/03/17 16:45:27 by mverdier         ###   ########.fr        #
+#    Updated: 2017/03/17 16:51:05 by mverdier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ STRSRCNAM	=	ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c \
 			 	ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
 			 	ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_strsplit.c \
 			 	ft_itoa.c ft_atoi.c ft_strextract.c ft_strsplit_str.c \
-				ft_strrextract.c ft_str_test_chars.c
+				ft_strrextract.c ft_str_test_chars.c ft_isnumber.c
 STRSRC		=	$(STRSRCNAM:%=$(STRDIR)/%)
 STROBJ		=	$(STRSRC:%.c=%.o)
 
@@ -89,7 +89,7 @@ BASOBJ		=	$(BASSRC:%.c=%.o)
 
 CHARTDIR	=	$(SRCDIR)/ft_char_tools
 CHARTSRCNAM	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-			 	ft_isblank.c ft_isspace.c ft_toupper.c ft_tolower.c ft_isnumber.c\
+			 	ft_isblank.c ft_isspace.c ft_toupper.c ft_tolower.c
 CHARTSRC	=	$(CHARTSRCNAM:%=$(CHARTDIR)/%)
 CHARTOBJ	=	$(CHARTSRC:%.c=%.o)
 

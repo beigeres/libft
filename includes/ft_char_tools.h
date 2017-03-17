@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 19:11:30 by etrobert          #+#    #+#             */
-/*   Updated: 2017/03/17 16:46:53 by mverdier         ###   ########.fr       */
+/*   Updated: 2017/03/17 16:50:25 by mverdier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ bool			ft_isascii(char c);
 bool			ft_isprint(char c);
 bool			ft_isblank(char c);
 bool			ft_isspace(char c);
-bool			ft_isnumber(char *str);
 
 char			ft_toupper(char c);
 char			ft_tolower(char c);
