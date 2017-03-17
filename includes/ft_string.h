@@ -6,7 +6,7 @@
 /*   By: etrobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 17:19:59 by etrobert          #+#    #+#             */
-/*   Updated: 2017/03/16 19:10:06 by tbeldame         ###   ########.fr       */
+/*   Updated: 2017/03/17 16:46:54 by mverdier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,5 @@ char			**ft_strsplit_str(const char *s, char *chars);
 bool			ft_str_test_chars(char *str, bool (*test)(char));
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
-bool			ft_isnumber(char *str);
 
 #endif
