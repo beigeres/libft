@@ -1,5 +1,7 @@
 # libft
 
+42 project: basic library inspired by the standard C library
+
 ## printf bonuses
 ### coloration
 example : ``ft_printf("%kI'm red%k %d is blue\n", FMT_RED, FMT_BLUE, 42);``
